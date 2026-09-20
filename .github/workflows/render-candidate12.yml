@@ -1,0 +1,34 @@
+name: Render Candidate 12
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/home_candidate_12_visual.dart'
+      - 'test/candidate12_render_test.dart'
+      - '.github/workflows/render-candidate12.yml'
+      - 'pubspec.yaml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Flutter version
+        run: flutter --version
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Render Candidate 12 goldens
+        run: flutter test --update-goldens test/candidate12_render_test.dart
+      - name: Upload Candidate 12 renders
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate12-390x844
+          path: test/goldens/candidate12_*_390x844.png
+          if-no-files-found: error
+          retention-days: 14
