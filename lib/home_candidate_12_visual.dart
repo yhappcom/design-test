@@ -85,14 +85,41 @@ class _HomeCandidate12VisualState extends State<HomeCandidate12Visual> {
     fontSize:size,fontWeight:FontWeight.w500,
     fontFeatures:const[FontFeature.tabularFigures()]);
 
-  Widget _header(BuildContext c)=>SizedBox(height:44,child:Row(children:[
-    Text('LogMate',style:Theme.of(c).textTheme.titleMedium?.copyWith(fontSize:17,letterSpacing:-.1)),
-    const Spacer(),
-    Semantics(button:true,label:'Settings',child:InkWell(
-      onTap:(){},borderRadius:BorderRadius.circular(7),
-      child:SizedBox(width:44,height:44,child:Align(alignment:Alignment.centerRight,
-        child:Icon(Icons.settings_outlined,size:18,color:sub(c))))),
-  ]));
+  Widget _header(BuildContext c) => SizedBox(
+    height: 44,
+    child: Row(
+      children: [
+        Text(
+          'LogMate',
+          style: Theme.of(c).textTheme.titleMedium?.copyWith(
+                fontSize: 17,
+                letterSpacing: -.1,
+              ),
+        ),
+        const Spacer(),
+        Semantics(
+          button: true,
+          label: 'Settings',
+          child: InkWell(
+            onTap: () {},
+            borderRadius: BorderRadius.circular(7),
+            child: SizedBox(
+              width: 44,
+              height: 44,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Icon(
+                  Icons.settings_outlined,
+                  size: 18,
+                  color: sub(c),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 
   Widget _actions(BuildContext c)=>SizedBox(height:44,child:Row(children:[
     Expanded(child:_action(c,'＋  Add Flight',Alignment.centerLeft,'Add Flight')),
@@ -141,13 +168,36 @@ class _HomeCandidate12VisualState extends State<HomeCandidate12Visual> {
     onTap:(){},borderRadius:BorderRadius.circular(7),
     child:SizedBox(width:44,height:44,child:Icon(i,size:20,color:sub(c)))));
 
-  Widget _section(BuildContext c,String title,String action)=>SizedBox(height:44,child:Row(children:[
-    Text(title,style:Theme.of(c).textTheme.titleMedium),const Spacer(),
-    Semantics(button:true,label:action.replaceAll(' ›',''),child:InkWell(
-      onTap:(){},borderRadius:BorderRadius.circular(7),
-      child:SizedBox(height:44,child:Align(alignment:Alignment.centerRight,
-        child:Text(action,style:Theme.of(c).textTheme.bodyMedium?.copyWith(color:sub(c),fontWeight:FontWeight.w500))))),
-  ]));
+  Widget _section(BuildContext c, String title, String action) => SizedBox(
+    height: 44,
+    child: Row(
+      children: [
+        Text(title, style: Theme.of(c).textTheme.titleMedium),
+        const Spacer(),
+        Semantics(
+          button: true,
+          label: action.replaceAll(' ›', ''),
+          child: InkWell(
+            onTap: () {},
+            borderRadius: BorderRadius.circular(7),
+            child: SizedBox(
+              height: 44,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  action,
+                  style: Theme.of(c).textTheme.bodyMedium?.copyWith(
+                        color: sub(c),
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 
   TextStyle _head(BuildContext c)=>Theme.of(c).textTheme.bodyMedium!.copyWith(
     fontSize:11.5,color:sub(c),fontWeight:FontWeight.w500);
