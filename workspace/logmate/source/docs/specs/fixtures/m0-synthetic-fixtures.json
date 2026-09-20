@@ -1,0 +1,987 @@
+{
+  "fixtureSchemaVersion": 2,
+  "classification": "synthetic-only",
+  "implementationStatus": "future-contract-not-current-test-pass",
+  "companyExcelHeaders": [
+    "rowNo",
+    "acType",
+    "fltDat",
+    "fltTime",
+    "fltNo",
+    "fltAcNo",
+    "fclEmpId",
+    "fclEmpNam",
+    "fclEmpCls",
+    "order1",
+    "dutyCode",
+    "stFr",
+    "stTo",
+    "at",
+    "bt",
+    "ntTme",
+    "instTme",
+    "toCnt",
+    "ldCnt"
+  ],
+  "companyRows": [
+    {
+      "id": "FOM-C",
+      "row": [
+        101,
+        "A320",
+        "2030-01-10",
+        "08:00",
+        "ZZ100",
+        "ZZ-AAA",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "C",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        "Y",
+        "Y"
+      ],
+      "creditContext": {
+        "applicable": true,
+        "experienceDurationSeconds": 22500,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditedPicSeconds": 22500,
+        "creditedFoSeconds": null,
+        "pfPm": "unresolved"
+      }
+    },
+    {
+      "id": "FOM-F",
+      "row": [
+        102,
+        "A320",
+        "2030-01-11",
+        "08:00",
+        "ZZ101",
+        "ZZ-AAB",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "F",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        null,
+        null
+      ],
+      "creditContext": {
+        "applicable": true,
+        "experienceDurationSeconds": 22500,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditedPicSeconds": null,
+        "creditedFoSeconds": 22500,
+        "pfPm": "unresolved"
+      }
+    },
+    {
+      "id": "FOM-C1",
+      "row": [
+        103,
+        "A320",
+        "2030-01-12",
+        "08:00",
+        "ZZ102",
+        "ZZ-AAC",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "C1",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        "Y",
+        "Y"
+      ],
+      "creditContext": {
+        "applicable": true,
+        "experienceDurationSeconds": 22500,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditFraction": "1/2",
+        "creditedPicSeconds": 11250,
+        "creditedFoSeconds": null,
+        "exactCreditedPic": "3:07:30",
+        "minuteResolutionPolicy": "OPEN"
+      }
+    },
+    {
+      "id": "FOM-3PC",
+      "row": [
+        104,
+        "A320",
+        "2030-01-13",
+        "08:00",
+        "ZZ103",
+        "ZZ-AAD",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "3PC",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        "Y",
+        "Y"
+      ],
+      "creditContext": {
+        "applicable": true,
+        "requiredAugmentedCrewContextPresent": true,
+        "experienceDurationSeconds": 22500,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditFraction": "2/3",
+        "creditedPicSeconds": 15000,
+        "creditedFoSeconds": null
+      }
+    },
+    {
+      "id": "FOM-3NC",
+      "row": [
+        105,
+        "A320",
+        "2030-01-14",
+        "08:00",
+        "ZZ104",
+        "ZZ-AAE",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "3NC",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        null,
+        null
+      ],
+      "creditContext": {
+        "applicable": true,
+        "requiredAugmentedCrewContextPresent": true,
+        "experienceDurationSeconds": 22500,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "picCreditFraction": "1/3",
+        "foCreditFraction": "1/3",
+        "creditedPicSeconds": 7500,
+        "creditedFoSeconds": 7500
+      }
+    },
+    {
+      "id": "FOM-3F-fraction",
+      "row": [
+        106,
+        "A320",
+        "2030-01-15",
+        "08:00",
+        "ZZ105",
+        "ZZ-AAF",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "3F",
+        "AAA",
+        "BBB",
+        "1+20",
+        "1+23",
+        "0+50",
+        "0+31",
+        null,
+        null
+      ],
+      "creditContext": {
+        "applicable": true,
+        "requiredAugmentedCrewContextPresent": true,
+        "experienceDurationSeconds": 4980,
+        "experienceDurationMeaning": "fixture-explicit"
+      },
+      "expected": {
+        "rawActual": "1+20",
+        "rawBlock": "1+23",
+        "rawNight": "0+50",
+        "rawInstrumentFlightTime": "0+31",
+        "creditFraction": "2/3",
+        "creditedPicSeconds": null,
+        "creditedFoSeconds": 3320,
+        "exactCreditedFo": "0:55:20",
+        "minuteResolutionPolicy": "OPEN"
+      }
+    },
+    {
+      "id": "FOM-R",
+      "row": [
+        107,
+        "A320",
+        "2030-01-16",
+        "08:00",
+        "ZZ106",
+        "ZZ-AAG",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "R",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        null,
+        null
+      ],
+      "creditContext": {
+        "applicable": false,
+        "reason": "FOM-table-dash-does-not-define-replacement-rule"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditedPicSeconds": null,
+        "creditedFoSeconds": null,
+        "automaticCreditRule": null
+      }
+    },
+    {
+      "id": "FOM-EX",
+      "row": [
+        108,
+        "A320",
+        "2030-01-17",
+        "08:00",
+        "ZZ107",
+        "ZZ-AAH",
+        "SYNTHETIC",
+        "Pilot Alpha",
+        "PILOT",
+        1,
+        "EX",
+        "AAA",
+        "BBB",
+        "6+00",
+        "6+15",
+        "3+00",
+        "2+30",
+        null,
+        null
+      ],
+      "creditContext": {
+        "applicable": false,
+        "reason": "FOM-table-dash-does-not-define-replacement-rule"
+      },
+      "expected": {
+        "rawActual": "6+00",
+        "rawBlock": "6+15",
+        "rawNight": "3+00",
+        "rawInstrumentFlightTime": "2+30",
+        "creditedPicSeconds": null,
+        "creditedFoSeconds": null,
+        "automaticCreditRule": null
+      }
+    }
+  ],
+  "fomDutyCodeCoverageBoundary": "Coverage labels apply only when SP.5.1/SP.5.2 applicability, row-specific crew-composition context, and footnotes are satisfied; they are not unconditional formulas. Numeric companyRows have an explicit applicable creditContext.",
+  "fomDutyCodeCoverage": [
+    {
+      "id": "FOM-H",
+      "dutyCode": "H",
+      "expectedCredit": "contextual-open",
+      "requiredContext": "SP.5.1 C/H captain-check pairing footnote"
+    },
+    {
+      "id": "FOM-L",
+      "dutyCode": "L",
+      "expectedCredit": "pic-full"
+    },
+    {
+      "id": "FOM-2C",
+      "dutyCode": "2C",
+      "expectedCredit": "pic-full"
+    },
+    {
+      "id": "FOM-PC",
+      "dutyCode": "PC",
+      "expectedCredit": "pic-full"
+    },
+    {
+      "id": "FOM-2F",
+      "dutyCode": "2F",
+      "expectedCredit": "fo-full"
+    },
+    {
+      "id": "FOM-NC",
+      "dutyCode": "NC",
+      "expectedCredit": "fo-full"
+    },
+    {
+      "id": "FOM-2NC",
+      "dutyCode": "2NC",
+      "expectedCredit": "no-credited-flight-experience-time"
+    },
+    {
+      "id": "FOM-2NF",
+      "dutyCode": "2NF",
+      "expectedCredit": "no-credited-flight-experience-time"
+    },
+    {
+      "id": "FOM-C2",
+      "dutyCode": "C2",
+      "expectedCredit": "pic-one-half"
+    },
+    {
+      "id": "FOM-F1",
+      "dutyCode": "F1",
+      "expectedCredit": "fo-one-half"
+    },
+    {
+      "id": "FOM-F2",
+      "dutyCode": "F2",
+      "expectedCredit": "fo-one-half"
+    },
+    {
+      "id": "FOM-K",
+      "dutyCode": "K",
+      "expectedCredit": "flight-experience-not-credited"
+    },
+    {
+      "id": "FOM-Y",
+      "dutyCode": "Y",
+      "expectedCredit": "flight-experience-not-credited"
+    },
+    {
+      "id": "FOM-O",
+      "dutyCode": "O",
+      "expectedCredit": "flight-experience-not-credited"
+    },
+    {
+      "id": "FOM-S",
+      "dutyCode": "S",
+      "expectedCredit": "dash-no-rule"
+    },
+    {
+      "id": "FOM-M",
+      "dutyCode": "M",
+      "expectedCredit": "dash-no-rule"
+    }
+  ],
+  "timeDisplay": [
+    {
+      "id": "TIME-clock",
+      "input": {
+        "duration": "2+20",
+        "basis": "clock_h_mm"
+      },
+      "expectedRow": "2+20",
+      "expectedTotal": "2+20"
+    },
+    {
+      "id": "TIME-decimal",
+      "input": {
+        "durationHours": 1.1,
+        "basis": "decimal_hours"
+      },
+      "expectedSeconds": 3960,
+      "expectedRow": "1.1",
+      "expectedTotal": "1+06"
+    },
+    {
+      "id": "TIME-split-decimal",
+      "input": {
+        "hours": 2,
+        "decimalDigit": 2,
+        "basis": "split_decimal_hours"
+      },
+      "expectedSeconds": 7920,
+      "expectedRow": [
+        "2",
+        "2"
+      ],
+      "expectedTotal": "2+12"
+    },
+    {
+      "id": "TIME-split-clock",
+      "input": {
+        "hours": 2,
+        "minutes": 12,
+        "basis": "split_hh_mm"
+      },
+      "expectedSeconds": 7920,
+      "expectedRow": [
+        "2",
+        "12"
+      ],
+      "expectedTotal": "2+12"
+    }
+  ],
+  "imports": [
+    {
+      "id": "IMPORT-manual-company-retain",
+      "scenarioMeaning": "allowed-order-not-required-lifecycle",
+      "manualRecord": {
+        "id": "flight-manual-1",
+        "operationalDate": "2030-02-01",
+        "flightNumber": "ZZ120",
+        "departure": "AAA",
+        "arrival": "BBB",
+        "rawBlock": "2+20"
+      },
+      "companyRow": {
+        "rowNo": 201,
+        "fltDat": "2030-02-01",
+        "fltNo": "ZZ120",
+        "stFr": "AAA",
+        "stTo": "BBB",
+        "bt": "2+25"
+      },
+      "userAction": "manual-retain-block",
+      "expected": {
+        "currentRawBlock": "2+20",
+        "companyEvidenceRawBlock": "2+25",
+        "fieldResolution": "manual-retain",
+        "createsRevision": true,
+        "laterCompanyImportMayOverwrite": false
+      }
+    },
+    {
+      "id": "IMPORT-company-crewconnex-mismatch",
+      "companyRecord": {
+        "id": "flight-company-1",
+        "operationalDate": "2030-02-02",
+        "flightNumber": "ZZ121",
+        "departure": "AAA",
+        "arrival": "CCC",
+        "rawBlock": "2+20",
+        "remarks": "manual note",
+        "manualCrew": [
+          {
+            "name": "Pilot Manual"
+          }
+        ]
+      },
+      "crewconnex": {
+        "page": 2,
+        "leg": 1,
+        "blh": "2+25",
+        "crew": [
+          {
+            "name": "Captain Bravo",
+            "role": "C"
+          },
+          {
+            "name": "Pilot Alpha",
+            "role": "F"
+          },
+          {
+            "name": "Purser Charlie",
+            "role": "PUR"
+          }
+        ]
+      },
+      "expected": {
+        "currentRawBlock": "2+20",
+        "review": "time-mismatch",
+        "crewSnapshotNames": [
+          "Captain Bravo",
+          "Pilot Alpha",
+          "Purser Charlie"
+        ],
+        "preservedRemark": "manual note",
+        "preservedManualCrew": [
+          "Pilot Manual"
+        ]
+      }
+    },
+    {
+      "id": "IMPORT-ambiguous",
+      "manualCandidates": [
+        {
+          "id": "flight-a",
+          "operationalDate": "2030-02-03",
+          "departure": "AAA",
+          "arrival": "BBB"
+        },
+        {
+          "id": "flight-b",
+          "operationalDate": "2030-02-03",
+          "departure": "AAA",
+          "arrival": "BBB"
+        }
+      ],
+      "companyRow": {
+        "rowNo": 202,
+        "fltDat": "2030-02-03",
+        "stFr": "AAA",
+        "stTo": "BBB",
+        "bt": "1+50"
+      },
+      "expected": {
+        "staging": true,
+        "autoAttach": false,
+        "autoCreate": false
+      }
+    },
+    {
+      "id": "IMPORT-company-derived-ramp-in",
+      "companyRow": {
+        "rowNo": 203,
+        "fltDat": "2030-02-04",
+        "fltTime": "08:00",
+        "bt": "2+20",
+        "rampIn": null
+      },
+      "expected": {
+        "rampOutUtc": "2030-02-04T08:00:00Z",
+        "rampInUtc": "2030-02-04T10:20:00Z",
+        "rampInValueKind": "calculated",
+        "rampInSource": "ramp-out-plus-block",
+        "companyImportedRampIn": false
+      }
+    }
+  ],
+  "nightClassificationBoundary": "Partial Night only identifies a partial-night leg. It does not prove opposite endpoint states. Any endpoint states in these fixtures are independently pre-supplied synthetic inputs; no astronomical boundary or algorithm is selected.",
+  "nightClassification": [
+    {
+      "id": "NIGHT-zero",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": "0+00"
+      },
+      "expected": {
+        "candidate": {
+          "dayTakeoffCount": 1,
+          "nightTakeoffCount": 0,
+          "dayLandingCount": 1,
+          "nightLandingCount": 0
+        },
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-full",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": "2+00"
+      },
+      "expected": {
+        "candidate": {
+          "dayTakeoffCount": 0,
+          "nightTakeoffCount": 1,
+          "dayLandingCount": 0,
+          "nightLandingCount": 1
+        },
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-partial-independent-night-day",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": "0+30",
+        "independentlyClassifiedEndpoints": {
+          "departure": {
+            "state": "night",
+            "inputStatus": "independently-sufficient-for-synthetic-fixture"
+          },
+          "arrival": {
+            "state": "day",
+            "inputStatus": "independently-sufficient-for-synthetic-fixture"
+          }
+        }
+      },
+      "expected": {
+        "recordedNight": "0+30",
+        "candidate": {
+          "dayTakeoffCount": 0,
+          "nightTakeoffCount": 1,
+          "dayLandingCount": 1,
+          "nightLandingCount": 0
+        },
+        "derivedOneEndpointFromOther": false,
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-partial-independent-day-night",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": "0+30",
+        "independentlyClassifiedEndpoints": {
+          "departure": {
+            "state": "day",
+            "inputStatus": "independently-sufficient-for-synthetic-fixture"
+          },
+          "arrival": {
+            "state": "night",
+            "inputStatus": "independently-sufficient-for-synthetic-fixture"
+          }
+        }
+      },
+      "expected": {
+        "recordedNight": "0+30",
+        "candidate": {
+          "dayTakeoffCount": 1,
+          "nightTakeoffCount": 0,
+          "dayLandingCount": 0,
+          "nightLandingCount": 1
+        },
+        "derivedOneEndpointFromOther": false,
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-null",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": null
+      },
+      "expected": {
+        "candidate": null,
+        "state": "unresolved",
+        "dayFallback": false,
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-partial-insufficient-endpoints",
+      "input": {
+        "personalTakeoffCount": 1,
+        "personalLandingCount": 1,
+        "block": "2+00",
+        "night": "0+30",
+        "independentlyClassifiedEndpoints": {
+          "departure": {
+            "state": "night",
+            "inputStatus": "independently-sufficient-for-synthetic-fixture"
+          },
+          "arrival": {
+            "state": null,
+            "inputStatus": "insufficient"
+          }
+        }
+      },
+      "expected": {
+        "recordedNight": "0+30",
+        "candidate": null,
+        "state": "unresolved",
+        "derivedOneEndpointFromOther": false,
+        "dayFallback": false,
+        "userEditable": true
+      }
+    },
+    {
+      "id": "NIGHT-user-edit-authoritative",
+      "input": {
+        "userConfirmedSplit": {
+          "dayTakeoffCount": 0,
+          "nightTakeoffCount": 1,
+          "dayLandingCount": 0,
+          "nightLandingCount": 1
+        },
+        "laterNight": "0+30",
+        "laterIndependentEndpointClassifications": {
+          "departure": "day",
+          "arrival": "night"
+        }
+      },
+      "expected": {
+        "preserveUserConfirmedSplit": true,
+        "automaticOverwrite": false
+      }
+    }
+  ],
+  "simulator": {
+    "id": "SIM-basic",
+    "record": {
+      "sessionDate": "2030-03-01",
+      "sessionDuration": "2+00",
+      "personalTakeoffCount": 2,
+      "personalLandingCount": 2
+    },
+    "expected": {
+      "includedInFlightTotal": false,
+      "includedInSimulatorOutputColumns": true
+    }
+  },
+  "crewConnexDateBoundary": {
+    "id": "CREW-local-date-boundary",
+    "use": "optional-existing-record-enrichment-no-fixed-cadence",
+    "importedOnSourceLocalDate": "2030-04-10",
+    "legs": [
+      {
+        "localOperationalDate": "2030-04-09",
+        "flightNumber": "ZZ130",
+        "existingActualRecord": false,
+        "expected": "exclude-no-independent-flight-record"
+      },
+      {
+        "localOperationalDate": "2030-04-10",
+        "flightNumber": "ZZ131",
+        "existingActualRecord": true,
+        "expected": "augment-existing-only"
+      },
+      {
+        "localOperationalDate": "2030-04-11",
+        "flightNumber": "ZZ132",
+        "existingActualRecord": false,
+        "expected": "exclude"
+      }
+    ]
+  },
+  "crewConnexCompanyDateOffset": {
+    "id": "CREW-company-date-minus-one",
+    "existingRecord": {
+      "source": "company-excel",
+      "operationalDate": "2030-05-02",
+      "flightNumber": "ZZ140",
+      "departure": "AAA",
+      "arrival": "BBB",
+      "registration": "ZZ-AAX",
+      "rawBlock": "2+20"
+    },
+    "crewConnexLeg": {
+      "localOperationalDate": "2030-05-01",
+      "flightNumber": "ZZ140",
+      "departure": "AAA",
+      "arrival": "BBB",
+      "registration": "ZZ-AAX",
+      "blh": "2+20"
+    },
+    "expected": {
+      "dateOffsetDays": -1,
+      "matchCandidate": true,
+      "companyOperationalDateRemains": "2030-05-02",
+      "crewConnexMayCreateFlightRecord": false,
+      "mayUpdateCrewSnapshot": true
+    }
+  },
+  "airportCodeAliases": [
+    {
+      "id": "AIRPORT-iata-source",
+      "input": {
+        "sourceCode": "AAA",
+        "sourceCodeKind": "iata",
+        "airportDataVersion": "2030.1"
+      },
+      "referenceMatch": {
+        "iataCode": "AAA",
+        "icaoCode": "ZZZZ",
+        "unique": true
+      },
+      "expected": {
+        "sourceCode": "AAA",
+        "iataCode": "AAA",
+        "icaoCode": "ZZZZ"
+      }
+    },
+    {
+      "id": "AIRPORT-icao-source",
+      "input": {
+        "sourceCode": "ZZZZ",
+        "sourceCodeKind": "icao",
+        "airportDataVersion": "2030.1"
+      },
+      "referenceMatch": {
+        "iataCode": "AAA",
+        "icaoCode": "ZZZZ",
+        "unique": true
+      },
+      "expected": {
+        "sourceCode": "ZZZZ",
+        "iataCode": "AAA",
+        "icaoCode": "ZZZZ"
+      }
+    },
+    {
+      "id": "AIRPORT-ambiguous",
+      "input": {
+        "sourceCode": "CITY",
+        "sourceCodeKind": "unknown",
+        "airportDataVersion": "2030.1"
+      },
+      "referenceMatch": {
+        "unique": false
+      },
+      "expected": {
+        "sourceCode": "CITY",
+        "iataCode": null,
+        "icaoCode": null
+      }
+    }
+  ],
+  "pageTotals": {
+    "id": "PAGE-alpha-3",
+    "profile": "alpha-k",
+    "pageSize": 3,
+    "semanticColumns": {
+      "bt": "block",
+      "pic": "pic-time",
+      "fo": "fo-time"
+    },
+    "previousTotal": {
+      "bt": "100+00",
+      "pic": "40+00",
+      "fo": "60+00"
+    },
+    "rows": [
+      {
+        "id": "p1",
+        "bt": "2+30",
+        "pic": "2+30",
+        "fo": null
+      },
+      {
+        "id": "p2",
+        "bt": "2+00",
+        "pic": null,
+        "fo": "2+00"
+      },
+      {
+        "id": "p3",
+        "bt": "1+45",
+        "pic": null,
+        "fo": "1+45"
+      }
+    ],
+    "expected": {
+      "pageTotal": {
+        "bt": "6+15",
+        "pic": "2+30",
+        "fo": "3+45"
+      },
+      "newTotal": {
+        "bt": "106+15",
+        "pic": "42+30",
+        "fo": "63+45"
+      }
+    },
+    "doesNotDefineUniversalProfileTotalTime": true
+  },
+  "sync": [
+    {
+      "id": "SYNC-stale-pull",
+      "implementationStatus": "future-contract",
+      "serverState": "deleted",
+      "deviceState": "old-active-no-pending-operation",
+      "expected": "device-pulls-tombstone-no-upload"
+    },
+    {
+      "id": "SYNC-later-update",
+      "implementationStatus": "future-contract",
+      "serverState": "deleted-revision-8",
+      "deviceState": "offline-update-pending",
+      "expected": "server-accepts-later-operation-as-restore-revision"
+    }
+  ],
+  "migration": [
+    {
+      "id": "MIG-optional-field",
+      "implementationStatus": "future-contract",
+      "fromVersion": 1,
+      "toVersion": 2,
+      "change": "optional landingType added",
+      "expected": "null-no-inference"
+    },
+    {
+      "id": "MIG-atomic-failure",
+      "implementationStatus": "future-contract",
+      "fromVersion": 1,
+      "toVersion": 2,
+      "fault": "storage-write-failure",
+      "expected": "old-complete-or-new-complete-never-partial"
+    }
+  ],
+  "export": {
+    "id": "EXPORT-data-current-only",
+    "implementationStatus": "future-contract",
+    "input": {
+      "activeFlightRecords": 1,
+      "activeSimulatorRecords": 1,
+      "sourceEvidence": 2,
+      "revisionHistory": 3,
+      "tombstones": 1,
+      "deletedPayloads": 1
+    },
+    "expected": {
+      "dataExcelIncludes": [
+        "FlightRecord.currentFields",
+        "SimulatorRecord.currentFields"
+      ],
+      "dataExcelExcludes": [
+        "SourceEvidence",
+        "sourceLocator",
+        "parserVersion",
+        "RevisionHistory",
+        "Operation",
+        "Receipt",
+        "Tombstone",
+        "DeletedPayload",
+        "metadataSheet"
+      ]
+    }
+  }
+}

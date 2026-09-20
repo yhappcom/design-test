@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#202326}.t20{font-size:20px;font-weight:600}.t17{font-size:17px;font-weight:600}.t15{font-size:15px}.muted{fill:#686d72}.rule{stroke:#d9dcdf;stroke-width:1}.frame{fill:#fafafa;stroke:#c9cdd1;stroke-width:1}.action{fill:#202326}.actionText{fill:#fff;font-size:15px;font-weight:600}.outline{fill:none;stroke:#8c9298}.focus{fill:none;stroke:#202326;stroke-width:2}.small{font-size:13px;fill:#686d72}.num{font-variant-numeric:tabular-nums}.label{font-size:15px;font-weight:600}.note{font-size:14px;fill:#555b61}.boardTitle{font-size:24px;font-weight:650}.candidate{font-size:18px;font-weight:650}
+</style>
+<rect width="1440" height="1120" fill="#f1f2f3"/>
+<text x="48" y="46" class="boardTitle">LogMate Home — controlled owner-decision specimen</text>
+<text x="48" y="72" class="note">Same visual grammar and data fixture. Only Recent/Search hierarchy differs. Non-canonical candidate artifact.</text>
+
+<!-- HOME A -->
+<text x="70" y="112" class="candidate">HOME-A v0.1 — Action → Recent → Retrieval · recommended</text>
+<rect x="70" y="130" width="390" height="780" rx="10" class="frame"/>
+<text x="94" y="174" class="t20">LogMate</text><text x="411" y="174" text-anchor="end" class="t15">Settings</text>
+<line x1="94" y1="194" x2="436" y2="194" class="rule"/>
+<rect x="94" y="216" width="160" height="46" rx="5" class="action"/><text x="174" y="245" text-anchor="middle" class="actionText">Add Flight</text>
+<rect x="266" y="216" width="170" height="46" rx="5" class="outline"/><text x="351" y="245" text-anchor="middle" class="t15">View Logbook</text>
+<text x="94" y="304" class="t17">Recent</text>
+<text x="94" y="337" class="t15">18 Sep · KE457 · ICN → DAD</text><text x="436" y="337" text-anchor="end" class="t15 num">4+42</text><line x1="94" y1="350" x2="436" y2="350" class="rule"/>
+<text x="94" y="379" class="t15">17 Sep · KE621 · ICN → MNL</text><text x="436" y="379" text-anchor="end" class="t15 num">4+05</text><line x1="94" y1="392" x2="436" y2="392" class="rule"/>
+<text x="94" y="435" class="t17">Search</text><rect x="94" y="451" width="342" height="44" rx="4" class="outline"/><text x="108" y="479" class="t15 muted">Crew, route, flight number…</text>
+<text x="94" y="545" class="t17">Activity</text><text x="94" y="577" class="t15">September</text><text x="436" y="577" text-anchor="end" class="t15 num">8 flights</text><line x1="94" y1="590" x2="436" y2="590" class="rule"/>
+<text x="94" y="633" class="t17">Totals</text><text x="94" y="665" class="t15">Block</text><text x="436" y="665" text-anchor="end" class="t15 num">1,284+37</text><line x1="94" y1="678" x2="436" y2="678" class="rule"/>
+<text x="94" y="707" class="t15">Night</text><text x="436" y="707" text-anchor="end" class="t15 num">318+20</text><line x1="94" y1="720" x2="436" y2="720" class="rule"/>
+<text x="94" y="749" class="t15">Instrument</text><text x="436" y="749" text-anchor="end" class="t15 num">146+15</text>
+<text x="94" y="862" class="small">Illustrative mature-state fixture — not runtime evidence</text>
+
+<!-- HOME B -->
+<text x="510" y="112" class="candidate">HOME-B v0.1 — Action → Retrieval → Recent</text>
+<rect x="510" y="130" width="390" height="780" rx="10" class="frame"/>
+<text x="534" y="174" class="t20">LogMate</text><text x="876" y="174" text-anchor="end" class="t15">Settings</text>
+<line x1="534" y1="194" x2="876" y2="194" class="rule"/>
+<rect x="534" y="216" width="160" height="46" rx="5" class="action"/><text x="614" y="245" text-anchor="middle" class="actionText">Add Flight</text>
+<rect x="706" y="216" width="170" height="46" rx="5" class="outline"/><text x="791" y="245" text-anchor="middle" class="t15">View Logbook</text>
+<text x="534" y="304" class="t17">Search</text><rect x="534" y="320" width="342" height="44" rx="4" class="outline"/><text x="548" y="348" class="t15 muted">Crew, route, flight number…</text>
+<text x="534" y="414" class="t17">Recent</text>
+<text x="534" y="447" class="t15">18 Sep · KE457 · ICN → DAD</text><text x="876" y="447" text-anchor="end" class="t15 num">4+42</text><line x1="534" y1="460" x2="876" y2="460" class="rule"/>
+<text x="534" y="489" class="t15">17 Sep · KE621 · ICN → MNL</text><text x="876" y="489" text-anchor="end" class="t15 num">4+05</text><line x1="534" y1="502" x2="876" y2="502" class="rule"/>
+<text x="534" y="555" class="t17">Activity</text><text x="534" y="587" class="t15">September</text><text x="876" y="587" text-anchor="end" class="t15 num">8 flights</text><line x1="534" y1="600" x2="876" y2="600" class="rule"/>
+<text x="534" y="643" class="t17">Totals</text><text x="534" y="675" class="t15">Block</text><text x="876" y="675" text-anchor="end" class="t15 num">1,284+37</text><line x1="534" y1="688" x2="876" y2="688" class="rule"/>
+<text x="534" y="717" class="t15">Night</text><text x="876" y="717" text-anchor="end" class="t15 num">318+20</text><line x1="534" y1="730" x2="876" y2="730" class="rule"/>
+<text x="534" y="759" class="t15">Instrument</text><text x="876" y="759" text-anchor="end" class="t15 num">146+15</text>
+<text x="534" y="862" class="small">Illustrative mature-state fixture — not runtime evidence</text>
+
+<!-- pressure / transfer -->
+<text x="950" y="112" class="candidate">Controlled pressure + transfer</text>
+<text x="950" y="150" class="label">Empty Home</text><rect x="950" y="164" width="420" height="150" rx="6" class="frame"/>
+<text x="970" y="195" class="t20">LogMate</text><rect x="970" y="215" width="160" height="42" rx="5" class="action"/><text x="1050" y="242" text-anchor="middle" class="actionText">Add Flight</text><rect x="1142" y="215" width="190" height="42" rx="5" class="outline"/><text x="1237" y="242" text-anchor="middle" class="t15">View Logbook</text><text x="970" y="287" class="t15 muted">No accepted flight records yet.</text>
+
+<text x="950" y="354" class="label">Search focus pressure</text><rect x="950" y="368" width="420" height="108" rx="6" class="frame"/><text x="970" y="399" class="t17">Search</text><rect x="970" y="414" width="380" height="44" rx="4" class="focus"/><text x="984" y="442" class="t15">KE457</text>
+
+<text x="950" y="516" class="label">Add Flight transfer</text><rect x="950" y="530" width="420" height="190" rx="6" class="frame"/><text x="970" y="561" class="t20">Add Flight</text><line x1="970" y1="576" x2="1350" y2="576" class="rule"/><text x="970" y="609" class="t15">Block time</text><rect x="1210" y="589" width="140" height="42" rx="4" class="outline"/><text x="1280" y="616" text-anchor="middle" class="t15 num">4+42</text><text x="970" y="657" class="t15">Night time</text><rect x="1210" y="637" width="140" height="42" rx="4" class="outline"/><text x="1280" y="664" text-anchor="middle" class="t15 num">1+18</text><text x="970" y="701" class="small">Entry semantics only; no save/sync claim</text>
+
+<text x="950" y="760" class="label">View Logbook transfer</text><rect x="950" y="774" width="420" height="260" rx="6" class="frame"/><text x="970" y="805" class="t20">View Logbook</text><line x1="970" y1="820" x2="1350" y2="820" class="rule"/><text x="970" y="848" class="small">DATE</text><text x="1060" y="848" class="small">FLIGHT</text><text x="1250" y="848" class="small">BLOCK</text><text x="1350" y="848" text-anchor="end" class="small">NIGHT</text><line x1="970" y1="858" x2="1350" y2="858" class="rule"/><text x="970" y="884" class="t15">18 Sep</text><text x="1060" y="884" class="t15">KE457</text><text x="1250" y="884" class="t15 num">4+42</text><text x="1350" y="884" text-anchor="end" class="t15 num">1+18</text><line x1="970" y1="896" x2="1350" y2="896" class="rule"/><text x="970" y="924" class="t15">Page Total</text><text x="1350" y="924" text-anchor="end" class="t15 num">12+31</text><text x="970" y="952" class="t15">Previous Total</text><text x="1350" y="952" text-anchor="end" class="t15 num">305+49</text><line x1="970" y1="964" x2="1350" y2="964" class="rule"/><text x="970" y="992" class="t17">New Total</text><text x="1350" y="992" text-anchor="end" class="t17 num">318+20</text>
+
+<text x="48" y="1080" class="note">Exact hue/font/radius are not proposed locks. This specimen tests hierarchy, datum, density, transfer and protected-state continuity only.</text>
+</svg>

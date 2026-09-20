@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1040" viewBox="0 0 1320 1040">
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171715}.title{font-size:22px;font-weight:650}.meta{font-size:14px;fill:#686864}.h20{font-size:20px;font-weight:650}.h17{font-size:17px;font-weight:620}.t15{font-size:15px}.small{font-size:13px;fill:#70706b}.num{font-variant-numeric:tabular-nums}.surface{fill:#fffaf8;stroke:#cfcac5}.rule{stroke:#d9d4cf;stroke-width:1}.primary{fill:#171715}.primaryText{fill:#fffaf8;font-size:15px;font-weight:620}.control{fill:#fffaf8;stroke:#7d7a76;stroke-width:1}.accent{fill:#008d7e}.accentStroke{stroke:#008d7e;stroke-width:2;fill:none}.muted{fill:#6e6b67}.sectionLink{font-size:14px;fill:#4f4d49}.board{fill:#f2efec}.tag{font-size:12px;font-weight:650;letter-spacing:.5px;fill:#686864}
+</style>
+<rect width="1320" height="1040" class="board"/>
+<text x="48" y="44" class="title">LogMate Home — owner decision specimen</text>
+<text x="48" y="69" class="meta">HOME-A v0.2 / HOME-B v0.2 · same visual system, same fixture · hierarchy only · non-canonical</text>
+
+<!-- Candidate A -->
+<text x="82" y="112" class="h17">HOME-A v0.2</text><text x="82" y="134" class="small">Action → Current Period → Recent → Retrieval → Activity → Totals · recommended</text>
+<rect x="82" y="154" width="420" height="820" rx="12" class="surface"/>
+<text x="108" y="199" class="h20">LogMate</text><text x="474" y="199" text-anchor="end" class="t15">Settings</text>
+<line x1="108" y1="218" x2="476" y2="218" class="rule"/>
+<rect x="108" y="240" width="170" height="46" rx="5" class="primary"/><text x="193" y="269" text-anchor="middle" class="primaryText">Add Flight</text>
+<rect x="290" y="240" width="186" height="46" rx="5" class="control"/><text x="383" y="269" text-anchor="middle" class="t15">View Logbook</text>
+
+<text x="108" y="330" class="h17">September 2026</text><text x="476" y="330" text-anchor="end" class="sectionLink">‹  Current  ›</text>
+<line x1="108" y1="347" x2="476" y2="347" class="rule"/>
+<text x="108" y="377" class="t15 muted">This month</text><text x="476" y="377" text-anchor="end" class="t15 num">8 flights · 34+26</text>
+<text x="108" y="407" class="t15 muted">This year</text><text x="476" y="407" text-anchor="end" class="t15 num">92 flights · 401+18</text>
+
+<text x="108" y="454" class="h17">Recent</text><text x="476" y="454" text-anchor="end" class="sectionLink">View all</text>
+<text x="108" y="486" class="t15">18 Sep · KE457 · ICN → DAD</text><text x="476" y="486" text-anchor="end" class="t15 num">4+42</text><line x1="108" y1="499" x2="476" y2="499" class="rule"/>
+<text x="108" y="529" class="t15">17 Sep · KE621 · ICN → MNL</text><text x="476" y="529" text-anchor="end" class="t15 num">4+05</text>
+
+<text x="108" y="578" class="h17">Search</text>
+<rect x="108" y="594" width="368" height="42" rx="4" class="control"/><text x="122" y="620" class="t15 muted">Crew, route, flight number…</text>
+
+<text x="108" y="684" class="h17">Activity</text><text x="476" y="684" text-anchor="end" class="sectionLink">Last 30 days</text>
+<text x="108" y="716" class="t15 muted">Legs</text><text x="222" y="716" class="t15 num">16</text><text x="286" y="716" class="t15 muted">Block</text><text x="370" y="716" class="t15 num">68+12</text><text x="410" y="716" class="t15 muted">TO/LD</text><text x="476" y="716" text-anchor="end" class="t15 num">16/16</text>
+<line x1="108" y1="733" x2="476" y2="733" class="rule"/>
+
+<text x="108" y="778" class="h17">Totals</text><text x="476" y="778" text-anchor="end" class="sectionLink">Customize</text>
+<text x="108" y="811" class="t15">Block</text><text x="476" y="811" text-anchor="end" class="t15 num">1,284+37</text><line x1="108" y1="824" x2="476" y2="824" class="rule"/>
+<text x="108" y="854" class="t15">Night</text><text x="476" y="854" text-anchor="end" class="t15 num">318+20</text><line x1="108" y1="867" x2="476" y2="867" class="rule"/>
+<text x="108" y="897" class="t15">Instrument</text><text x="476" y="897" text-anchor="end" class="t15 num">146+15</text>
+<text x="108" y="944" class="small">Illustrative fixture · not persistence/calculation evidence</text>
+
+<!-- Candidate B -->
+<text x="590" y="112" class="h17">HOME-B v0.2</text><text x="590" y="134" class="small">Action → Retrieval → Current Period → Recent → Activity → Totals</text>
+<rect x="590" y="154" width="420" height="820" rx="12" class="surface"/>
+<text x="616" y="199" class="h20">LogMate</text><text x="982" y="199" text-anchor="end" class="t15">Settings</text>
+<line x1="616" y1="218" x2="984" y2="218" class="rule"/>
+<rect x="616" y="240" width="170" height="46" rx="5" class="primary"/><text x="701" y="269" text-anchor="middle" class="primaryText">Add Flight</text>
+<rect x="798" y="240" width="186" height="46" rx="5" class="control"/><text x="891" y="269" text-anchor="middle" class="t15">View Logbook</text>
+
+<text x="616" y="330" class="h17">Search</text>
+<rect x="616" y="346" width="368" height="42" rx="4" class="control"/><text x="630" y="372" class="t15 muted">Crew, route, flight number…</text>
+
+<text x="616" y="436" class="h17">September 2026</text><text x="984" y="436" text-anchor="end" class="sectionLink">‹  Current  ›</text>
+<line x1="616" y1="453" x2="984" y2="453" class="rule"/>
+<text x="616" y="483" class="t15 muted">This month</text><text x="984" y="483" text-anchor="end" class="t15 num">8 flights · 34+26</text>
+<text x="616" y="513" class="t15 muted">This year</text><text x="984" y="513" text-anchor="end" class="t15 num">92 flights · 401+18</text>
+
+<text x="616" y="560" class="h17">Recent</text><text x="984" y="560" text-anchor="end" class="sectionLink">View all</text>
+<text x="616" y="592" class="t15">18 Sep · KE457 · ICN → DAD</text><text x="984" y="592" text-anchor="end" class="t15 num">4+42</text><line x1="616" y1="605" x2="984" y2="605" class="rule"/>
+<text x="616" y="635" class="t15">17 Sep · KE621 · ICN → MNL</text><text x="984" y="635" text-anchor="end" class="t15 num">4+05</text>
+
+<text x="616" y="684" class="h17">Activity</text><text x="984" y="684" text-anchor="end" class="sectionLink">Last 30 days</text>
+<text x="616" y="716" class="t15 muted">Legs</text><text x="730" y="716" class="t15 num">16</text><text x="794" y="716" class="t15 muted">Block</text><text x="878" y="716" class="t15 num">68+12</text><text x="918" y="716" class="t15 muted">TO/LD</text><text x="984" y="716" text-anchor="end" class="t15 num">16/16</text>
+<line x1="616" y1="733" x2="984" y2="733" class="rule"/>
+
+<text x="616" y="778" class="h17">Totals</text><text x="984" y="778" text-anchor="end" class="sectionLink">Customize</text>
+<text x="616" y="811" class="t15">Block</text><text x="984" y="811" text-anchor="end" class="t15 num">1,284+37</text><line x1="616" y1="824" x2="984" y2="824" class="rule"/>
+<text x="616" y="854" class="t15">Night</text><text x="984" y="854" text-anchor="end" class="t15 num">318+20</text><line x1="616" y1="867" x2="984" y2="867" class="rule"/>
+<text x="616" y="897" class="t15">Instrument</text><text x="984" y="897" text-anchor="end" class="t15 num">146+15</text>
+<text x="616" y="944" class="small">Illustrative fixture · not persistence/calculation evidence</text>
+
+<!-- Decision key -->
+<text x="1050" y="180" class="tag">DECISION VARIABLE</text><text x="1050" y="210" class="t15">A</text><text x="1080" y="210" class="small">Current context and Recent</text><text x="1080" y="231" class="small">before keyboard-heavy retrieval</text><text x="1050" y="274" class="t15">B</text><text x="1080" y="274" class="small">Retrieval immediately</text><text x="1080" y="295" class="small">after primary actions</text>
+<line x1="1050" y1="330" x2="1260" y2="330" class="rule"/>
+<text x="1050" y="365" class="tag">SHARED INVARIANTS</text><text x="1050" y="395" class="small">English-only UI</text><text x="1050" y="418" class="small">No section cards / KPI tiles</text><text x="1050" y="441" class="small">Datum + whitespace + rules</text><text x="1050" y="464" class="small">No aviation imagery</text><text x="1050" y="487" class="small">No bottom navigation</text><text x="1050" y="510" class="small">No ad in this specimen</text>
+<text x="1050" y="560" class="tag">STATUS</text><text x="1050" y="590" class="small">Owner-decision candidate</text><text x="1050" y="613" class="small">No baseline selected</text><text x="1050" y="636" class="small">No lock authority</text>
+</svg>
