@@ -122,7 +122,7 @@ class _HomeCandidate12VisualState extends State<HomeCandidate12Visual> {
   );
 
   Widget _actions(BuildContext c)=>SizedBox(height:44,child:Row(children:[
-    Expanded(child:_action(c,'＋  Add Flight',Alignment.centerLeft,'Add Flight')),
+    Expanded(child:_action(c,'+  Add Flight',Alignment.centerLeft,'Add Flight')),
     Expanded(child:_action(c,'View Logbook  ›',Alignment.centerRight,'View Logbook')),
   ]));
   Widget _action(BuildContext c,String text,Alignment align,String semantics)=>Semantics(
@@ -211,10 +211,10 @@ class _HomeCandidate12VisualState extends State<HomeCandidate12Visual> {
     SizedBox(height:31,child:_grid(
       Center(child:Text(date,style:mono(c))),
       Center(child:Row(mainAxisSize:MainAxisSize.min,children:[
-        SizedBox(width:19,child:Text(carrier,style:Theme.of(c).textTheme.bodyLarge?.copyWith(fontSize:13.5,fontWeight:FontWeight.w500))),
+        SizedBox(width:19,child:Text(carrier,maxLines:1,softWrap:false,overflow:TextOverflow.clip,style:Theme.of(c).textTheme.bodyLarge?.copyWith(fontSize:12.5,fontWeight:FontWeight.w500))),
         const SizedBox(width:2),
-        SizedBox(width:42,child:Text(number,style:Theme.of(c).textTheme.bodyLarge?.copyWith(
-          fontSize:13.5,fontWeight:FontWeight.w500,fontFeatures:const[FontFeature.tabularFigures()]))),
+        SizedBox(width:42,child:Text(number,maxLines:1,softWrap:false,overflow:TextOverflow.clip,style:Theme.of(c).textTheme.bodyLarge?.copyWith(
+          fontSize:12.5,fontWeight:FontWeight.w500,fontFeatures:const[FontFeature.tabularFigures()]))),
       ])),
       Center(child:Row(mainAxisSize:MainAxisSize.min,children:[
         SizedBox(width:36,child:Text(dep,textAlign:TextAlign.center,style:mono(c))),
