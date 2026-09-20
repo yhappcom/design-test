@@ -1,0 +1,24 @@
+name: Render Candidate 11
+on:
+  push:
+    branches: [main]
+    paths: ['lib/home_candidate_11_visual.dart','test/candidate11_render_test.dart','.github/workflows/render-candidate11.yml']
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Render
+        run: flutter test --update-goldens test/candidate11_render_test.dart
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate11-390x844
+          path: test/goldens/candidate11_*_390x844.png
+          if-no-files-found: error
+          retention-days: 14
