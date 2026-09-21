@@ -1,7 +1,7 @@
 # Candidate 14 — AWAITING OWNER DECISION
 
 Candidate: Independent Precision
-Status: AWAITING OWNER DECISION
+Status: SAVED BY OWNER
 Branch: candidate/14-independent-precision
 Baseline: 79fd5c43ca6b09ea5b773c77319709139f1b8089
 Design Studio authority: 74dcb12d278c110dd682ac0ff8c4988aceaba28b
@@ -18,5 +18,5 @@ Evidence:
 Final visual inspection: PASS.
 Both downloaded PNGs were actually opened. Typography and glyph rendering are clean; no visible clipping or overflow; operational columns remain aligned; section rules and spacing are intact; saturated cobalt/neutral palette is clearly non-pastel; light/dark hierarchy is coherent; selected 28-day state has color, fill, weight and boundary cues; controls and navigation remain legible.
 
-Owner action required: 저장 or 폐기.
-Candidate remains sealed until owner decision. Do not open Candidate 15.
+Owner decision: 저장 (SAVED).
+Candidate 14 remains preserved as an owner-selected candidate. It must not become a generation parent unless explicitly authorized.
