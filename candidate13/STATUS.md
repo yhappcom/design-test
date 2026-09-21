@@ -1,7 +1,7 @@
 # Candidate 13 — AWAITING OWNER DECISION
 
 Candidate: Independent Signal
-Status: AWAITING OWNER DECISION
+Status: REJECTED BY OWNER
 Branch: candidate/13-independent-signal
 Baseline: 79fd5c43ca6b09ea5b773c77319709139f1b8089
 Design Studio authority snapshot: 74dcb12d278c110dd682ac0ff8c4988aceaba28b
@@ -17,5 +17,5 @@ Evidence:
 Final visual inspection: PASS.
 Both downloaded PNGs were actually opened after the successful run. Text/glyph rendering is clean; prior Ahem/block-glyph defects are absent; unsupported non-ASCII marks are absent; no visible clipping or overflow; operational columns remain aligned; section boundaries and spacing are intact; light/dark state hierarchy is coherent; selected 28-day state has tonal/weight/boundary cues; controls and bottom navigation remain visually legible.
 
-Owner action required: 저장 or 폐기.
-Candidate remains sealed until owner decision. Do not open Candidate 14.
+Owner decision: 폐기 (REJECTED).
+Candidate 13 is permanently excluded as a generation input/reference/seed/derivation source.
