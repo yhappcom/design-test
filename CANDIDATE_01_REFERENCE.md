@@ -18,29 +18,38 @@ Concept identity retained for recognition only:
 - quiet functional boundaries;
 - no decorative aviation/dashboard styling.
 
-
 ## Owner-authoritative visual reference — 2026-09-21
 
 The owner supplied the retained Candidate 01 screen directly in chat and confirmed it as the Candidate 01 they hold.
-This owner-supplied screen is the authoritative visual identity reference for Candidate 01 and overrides any ambiguous reconstruction from later candidates or generic Home prototypes.
+This owner-supplied screen is the authoritative visual reference for Candidate 01. It overrides ambiguous later reconstructions.
 
-Visual fingerprint for identification only (never generation input):
-- 390-ish compact mobile Home, light presentation;
-- white / very-light cool background with vivid cobalt-blue accent;
-- compact “LogMate” wordmark and settings gear at top;
-- two equal blue primary controls: “Add flight” and “View logbook”;
-- restrained “Search logbook” utility field;
-- “September 2026” current-period block with Block Time and This month / This year values;
-- open ledger-like Recent Flights region with DATE / FLIGHT / ROUTE / BLOCK axes;
-- Activity segmented periods 7 days / 28 days / 90 days / Custom, with 28 days visibly selected;
-- three-column Activity summary and three-column Totals summary;
-- no bottom navigation, no decorative aviation imagery, no KPI-card grid.
+Original uploaded reference:
+- dimensions: 853 x 1844 PNG;
+- SHA-256: 9584c63f2f43a59228d55138b7507aed50b3e02050409f663a0f76e0e4961725;
+- persistent copy: ChatGPT Library /LogMate/Candidate01/candidate01_owner_reference_original.png.
 
-Historical canonical record:
-- yhappcom/logmate commit 501f18ff22ef0ea1fd80bb32700d17cde905371d
-- design/visual_identity/candidates/HOME_CANDIDATE_01_20260920.md
+Visual fingerprint for identification only (never new-candidate generation input):
+- warm near-white working surface;
+- centered LOG MATE wordmark, with MATE in restrained teal/green accent;
+- settings outline icon at upper-right;
+- Add flight / View logbook as equal open actions divided by a quiet vertical rule, not filled buttons;
+- pale rounded Search logbook utility field;
+- Current Period with SEP 2026 month control and Block Time;
+- This month 42+15 / This year 318+40;
+- open ledger Recent Flights with DATE / FLIGHT / ROUTE / BLOCK axes and fixtures 09.02 7C 132 GMP→CJU 1+12, 08.31 7C 1123 CJU→GMP 1+08, 08.29 KE 28 GMP→CJU 1+10;
+- Activity tabs 7 days / 28 days / 90 days / Custom, with 7 days selected;
+- Activity values Legs 4 / Block 6+48 / TO / LD 3 / 3;
+- Totals values Total 1,284+35 / B737 842+10 / SIC 1,163+55;
+- no bottom navigation, no card grid, no aviation decoration.
 
-Preservation rule:
+Historical canonical lineage:
+- yhappcom/logmate commit 47777f08bcd6d818c5b0ef9b2621655f38afa114 — HOME_WHITE_CANVAS_DRAFT_01.md
+- yhappcom/logmate commit 501f18ff22ef0ea1fd80bb32700d17cde905371d — HOME_CANDIDATE_01_20260920.md
+- the historical Candidate 01 was recorded as a static rendered concept; no dedicated Candidate 01 Flutter implementation was committed in that lineage.
+
+Preservation / verification rule:
 - owner comparison reference only;
 - never generation input, transformation source, style seed, or product baseline;
-- Candidate 01 must not be inferred from Candidates 02–12.
+- Candidate 01 must not be inferred from Candidates 02–12;
+- a reproducible Flutter reconstruction may use this owner image only to restore Candidate 01 itself;
+- reconstructed renders must be compared back to this owner-authoritative reference and clearly labeled reconstruction evidence.
