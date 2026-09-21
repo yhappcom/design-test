@@ -53,3 +53,24 @@ Preservation / verification rule:
 - Candidate 01 must not be inferred from Candidates 02–12;
 - a reproducible Flutter reconstruction may use this owner image only to restore Candidate 01 itself;
 - reconstructed renders must be compared back to this owner-authoritative reference and clearly labeled reconstruction evidence.
+
+
+## Reconstruction verification — 2026-09-21
+
+Status: **VERIFIED REPRODUCIBLE RECONSTRUCTION**.
+
+Canonical record:
+- `candidate01/VERIFICATION_20260921.md`
+
+Successful render evidence:
+- source commit: `2437227c43010d6bc99deaac07cbcad6131c5224`
+- workflow run ID: `35547338379`
+- artifact ID: `10616044354`
+- rendered PNG SHA-256: `28b25d8d5b5a0f46279ca6c835d34f2a4ce0422acd9fa22e76b4fd47d466dfd2`
+
+Persistent visual copies:
+- owner original: ChatGPT Library `/LogMate/Candidate01/candidate01_owner_reference_original.png`
+- owner 390x844 comparison image: `/LogMate/Candidate01/candidate01_owner_reference_390x844.png`
+- reconstructed 390x844 render: `/LogMate/Candidate01/candidate01_reconstruction_390x844.png`
+
+The reconstruction matches the historical Candidate 01 composition and rule geometry, but it is not claimed to be pixel-identical to the lost historical raster/font source.
