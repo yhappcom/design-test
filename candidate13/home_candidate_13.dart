@@ -94,7 +94,7 @@ class _Header extends StatelessWidget {
               Text('Good afternoon', style: _ui(c, 22, weight: FontWeight.w600)),
             ]),
           ),
-          IconButton(onPressed: () {}, tooltip: 'Settings', icon: Icon(Icons.tune_rounded, color: c.secondary, size: 21)),
+          TextButton(onPressed: () {}, child: Text('•••', style: _ui(c,16,weight:FontWeight.w700).copyWith(color:c.secondary))),
         ],
       );
 }
@@ -106,12 +106,12 @@ class _Actions extends StatelessWidget {
   Widget build(BuildContext context) => Row(children: [
         Expanded(
           child: _SignalButton(
-              c: c, label: 'Add flight', icon: Icons.add_rounded, primary: true),
+              c: c, label: 'Add flight', icon: '+', primary: true),
         ),
         const SizedBox(width: 10),
         Expanded(
           child: _SignalButton(
-              c: c, label: 'View logbook', icon: Icons.list_alt_rounded),
+              c: c, label: 'View logbook', icon: '≡'),
         ),
       ]);
 }
@@ -124,7 +124,7 @@ class _SignalButton extends StatelessWidget {
       this.primary = false});
   final _C13Colors c;
   final String label;
-  final IconData icon;
+  final String icon;
   final bool primary;
   @override
   Widget build(BuildContext context) => InkWell(
@@ -139,8 +139,7 @@ class _SignalButton extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Icon(icon,
-                size: 18, color: primary ? c.onSignal : c.text),
+            Text(icon, style: _ui(c,18,weight:FontWeight.w700).copyWith(color: primary ? c.onSignal : c.text)),
             const SizedBox(width: 7),
             Flexible(child: Text(label,
                 maxLines: 1,
@@ -169,7 +168,7 @@ class _SearchState extends State<_Search> {
       decoration: InputDecoration(
         hintText: 'Search flights, airports, crew',
         hintStyle: _ui(c,14).copyWith(color:c.secondary),
-        prefixIcon: Icon(Icons.search_rounded, size:20, color: active?c.focus:c.secondary),
+        prefixIcon: Center(widthFactor:1, child: Text('⌕', style:_ui(c,20,weight:FontWeight.w600).copyWith(color:active?c.focus:c.secondary))),
         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.rule)),
         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.focus,width:2)),
         contentPadding: const EdgeInsets.symmetric(vertical:12),
@@ -326,13 +325,13 @@ class _BottomNav extends StatelessWidget {
       border: Border(top: BorderSide(color: c.rule))),
     padding: const EdgeInsets.fromLTRB(12, 5, 12, 8),
     child: SafeArea(top: false, child: Row(children: [
-      _item(Icons.home_rounded, 'Home', true),
-      _item(Icons.menu_book_outlined, 'Logbook', false),
-      _item(Icons.insights_outlined, 'Activity', false),
-      _item(Icons.more_horiz_rounded, 'More', false),
+      _item('H', 'Home', true),
+      _item('L', 'Logbook', false),
+      _item('A', 'Activity', false),
+      _item('···', 'More', false),
     ])),
   );
-  Widget _item(IconData icon, String label, bool selected) => Expanded(
+  Widget _item(String icon, String label, bool selected) => Expanded(
     child: InkWell(
       onTap: () {},
       child: Semantics(
@@ -341,7 +340,7 @@ class _BottomNav extends StatelessWidget {
       child: SizedBox(height: 48, child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 20, color: selected ? c.signal : c.secondary),
+          Text(icon, style:_ui(c,13,weight:FontWeight.w700).copyWith(color:selected?c.signal:c.secondary)),
           const SizedBox(height: 2),
           Text(label, style: _ui(c, 10, weight: selected ? FontWeight.w700 : FontWeight.w500)
               .copyWith(color: selected ? c.signal : c.secondary)),
