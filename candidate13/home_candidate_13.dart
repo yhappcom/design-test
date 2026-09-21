@@ -66,7 +66,7 @@ class _C13Colors {
 
 TextStyle _ui(_C13Colors c, double size,
         {FontWeight weight = FontWeight.w400, double? height}) =>
-    TextStyle(color: c.text, fontSize: size, fontWeight: weight, height: height);
+    TextStyle(color: c.text, fontSize: size, fontWeight: weight, height: height, fontFamily: 'C13Roboto');
 
 TextStyle _op(_C13Colors c, double size,
         {FontWeight weight = FontWeight.w500}) =>
@@ -74,6 +74,7 @@ TextStyle _op(_C13Colors c, double size,
       color: c.text,
       fontSize: size,
       fontWeight: weight,
+      fontFamily: 'C13Roboto',
       fontFeatures: const [FontFeature.tabularFigures()],
       letterSpacing: .1,
     );
@@ -167,6 +168,7 @@ class _SearchState extends State<_Search> {
       focusNode: focus,
       decoration: InputDecoration(
         hintText: 'Search flights, airports, crew',
+        hintStyle: _ui(c,14).copyWith(color:c.secondary),
         prefixIcon: Icon(Icons.search_rounded, size:20, color: active?c.focus:c.secondary),
         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.rule)),
         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.focus,width:2)),
