@@ -1,0 +1,21 @@
+name: Render Candidate 16
+on:
+  push:
+    branches: [candidate/16-slate-index]
+    paths: ['candidate16/**','test/candidate16_render_test.dart','pubspec.yaml','.github/workflows/render-candidate16.yml']
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter test test/candidate16_render_test.dart
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate16-render
+          path: candidate16/rendered/*.png
+          if-no-files-found: error
