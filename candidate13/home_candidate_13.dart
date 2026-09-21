@@ -74,8 +74,6 @@ TextStyle _op(_C13Colors c, double size,
       color: c.text,
       fontSize: size,
       fontWeight: weight,
-      fontFamily: 'Roboto Mono',
-      fontFamilyFallback: const ['Roboto', 'Arial'],
       fontFeatures: const [FontFeature.tabularFigures()],
       letterSpacing: .1,
     );
@@ -128,7 +126,10 @@ class _SignalButton extends StatelessWidget {
   final IconData icon;
   final bool primary;
   @override
-  Widget build(BuildContext context) => InkWell(\n        onTap: () {},\n        borderRadius: BorderRadius.circular(10),\n        child: Container(
+  Widget build(BuildContext context) => InkWell(
+        onTap: () {},
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
           constraints: const BoxConstraints(minHeight: 48),
           decoration: BoxDecoration(
             color: primary ? c.signal : Colors.transparent,
@@ -328,8 +329,9 @@ class _BottomNav extends StatelessWidget {
     ])),
   );
   Widget _item(IconData icon, String label, bool selected) => Expanded(
-    child: Semantics(
-      button: true,
+    child: InkWell(
+      onTap: () {},
+      child: Semantics(
       selected: selected,
       label: label,
       child: SizedBox(height: 48, child: Column(
@@ -341,6 +343,7 @@ class _BottomNav extends StatelessWidget {
               .copyWith(color: selected ? c.signal : c.secondary)),
         ],
       )),
+      ),
     ),
   );
 }
