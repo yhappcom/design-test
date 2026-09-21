@@ -1,0 +1,21 @@
+name: Render Candidate 15
+on:
+  push:
+    branches: [candidate/15-signal-ledger]
+    paths: ['candidate15/**','test/candidate15_render_test.dart','pubspec.yaml','.github/workflows/render-candidate15.yml']
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter test test/candidate15_render_test.dart
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate15-render
+          path: candidate15/rendered/*.png
+          if-no-files-found: error
