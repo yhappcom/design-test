@@ -141,9 +141,11 @@ class _SignalButton extends StatelessWidget {
             Icon(icon,
                 size: 18, color: primary ? c.onSignal : c.text),
             const SizedBox(width: 7),
-            Text(label,
-                style: _ui(c, 14, weight: FontWeight.w600).copyWith(
-                    color: primary ? c.onSignal : c.text)),
+            Flexible(child: Text(label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: _ui(c, 13, weight: FontWeight.w600).copyWith(
+                    color: primary ? c.onSignal : c.text))),
           ]),
         ),
       );
@@ -203,7 +205,7 @@ class _CurrentPeriod extends StatelessWidget {
           trailing: Text('28 days', style: _ui(c, 12).copyWith(color: c.secondary))),
       const SizedBox(height: 12),
       Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        Text('62+41', style: _op(c, 31, weight: FontWeight.w600)),
+        Text('62+41', style: _op(c, 30, weight: FontWeight.w600)),
         const SizedBox(width: 8),
         Padding(
           padding: const EdgeInsets.only(bottom: 4),
@@ -211,7 +213,7 @@ class _CurrentPeriod extends StatelessWidget {
               .copyWith(letterSpacing: 1, color: c.secondary)),
         ),
         const Spacer(),
-        Text('18 flights', style: _ui(c, 13).copyWith(color: c.secondary)),
+        Text('18 flights', style: _ui(c, 12).copyWith(color: c.secondary)),
       ]),
       const SizedBox(height: 10),
       Container(height: 2, color: c.faint,
