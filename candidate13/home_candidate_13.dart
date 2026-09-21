@@ -90,7 +90,7 @@ class _Header extends StatelessWidget {
                   style: _ui(c, 12, weight: FontWeight.w700)
                       .copyWith(letterSpacing: 1.7, color: c.signal)),
               const SizedBox(height: 4),
-              Text('Good afternoon', style: _ui(c, 22, weight: FontWeight.w650)),
+              Text('Good afternoon', style: _ui(c, 22, weight: FontWeight.w600)),
             ]),
           ),
           IconButton(onPressed: () {}, tooltip: 'Settings', icon: Icon(Icons.tune_rounded, color: c.secondary, size: 21)),
@@ -142,7 +142,7 @@ class _SignalButton extends StatelessWidget {
                 size: 18, color: primary ? c.onSignal : c.text),
             const SizedBox(width: 7),
             Text(label,
-                style: _ui(c, 14, weight: FontWeight.w650).copyWith(
+                style: _ui(c, 14, weight: FontWeight.w600).copyWith(
                     color: primary ? c.onSignal : c.text)),
           ]),
         ),
@@ -203,7 +203,7 @@ class _CurrentPeriod extends StatelessWidget {
           trailing: Text('28 days', style: _ui(c, 12).copyWith(color: c.secondary))),
       const SizedBox(height: 12),
       Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        Text('62+41', style: _op(c, 31, weight: FontWeight.w650)),
+        Text('62+41', style: _op(c, 31, weight: FontWeight.w600)),
         const SizedBox(width: 8),
         Padding(
           padding: const EdgeInsets.only(bottom: 4),
@@ -259,7 +259,7 @@ class _FlightRow extends StatelessWidget {
         Text(data.$3, style: _op(c, 11)),
       ])),
       Expanded(child: Text(data.$4, style: _op(c, 11))),
-      SizedBox(width: 48, child: Text(data.$5, textAlign: TextAlign.end, style: _op(c, 11, weight: FontWeight.w650))),
+      SizedBox(width: 48, child: Text(data.$5, textAlign: TextAlign.end, style: _op(c, 11, weight: FontWeight.w600))),
     ]),
   );
 }
@@ -307,7 +307,7 @@ class _Totals extends StatelessWidget {
       Text(label, style: _ui(c, 9, weight: FontWeight.w700)
           .copyWith(letterSpacing: .8, color: c.secondary)),
       const SizedBox(height: 4),
-      Text(value, style: _op(c, 15, weight: FontWeight.w650)),
+      Text(value, style: _op(c, 15, weight: FontWeight.w600)),
     ],
   ));
 }
