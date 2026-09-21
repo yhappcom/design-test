@@ -18,22 +18,27 @@ Future<void> render(WidgetTester tester, Brightness brightness, String name) asy
   ));
   await tester.pump();
   await tester.pump(const Duration(milliseconds: 100));
+  expect(tester.takeException(), isNull);
   final boundary = key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-  final image = await boundary.toImage(pixelRatio: 1);
-  final data = await image.toByteData(format: ui.ImageByteFormat.png);
+  final bytes = await tester.runAsync(() async {
+    final image = await boundary.toImage(pixelRatio: 1);
+    final data = await image.toByteData(format: ui.ImageByteFormat.png);
+    final out = data!.buffer.asUint8List();
+    image.dispose();
+    return out;
+  });
   final file = File('candidate13/rendered/$name.png');
-  await file.parent.create(recursive: true);
-  await file.writeAsBytes(data!.buffer.asUint8List());
-  image.dispose();
+  await tester.runAsync(() async {
+    await file.parent.create(recursive: true);
+    await file.writeAsBytes(bytes!);
+  });
 }
 
 void main() {
   testWidgets('render candidate13 light', (tester) async {
     await render(tester, Brightness.light, 'candidate13-light-390x844');
-    expect(tester.takeException(), isNull);
   });
   testWidgets('render candidate13 dark', (tester) async {
     await render(tester, Brightness.dark, 'candidate13-dark-390x844');
-    expect(tester.takeException(), isNull);
   });
 }
