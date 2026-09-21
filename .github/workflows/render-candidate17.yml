@@ -1,0 +1,27 @@
+name: Render Candidate 17
+on:
+  push:
+    branches: [candidate/17-split-signal]
+    paths:
+      - 'lib/home_candidate_17.dart'
+      - 'lib/home_v0_11.dart'
+      - 'test/candidate17_render_test.dart'
+      - '.github/workflows/render-candidate17.yml'
+      - 'pubspec.yaml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter test test/candidate17_render_test.dart
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate17-render
+          path: candidate17/rendered/*.png
+          if-no-files-found: error
