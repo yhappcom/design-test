@@ -24,6 +24,7 @@ Future<void> render(WidgetTester tester, Brightness brightness, String name) asy
   final file = File('candidate13/rendered/$name.png');
   await file.parent.create(recursive: true);
   await file.writeAsBytes(data!.buffer.asUint8List());
+  image.dispose();
 }
 
 void main() {
