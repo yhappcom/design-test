@@ -1,0 +1,37 @@
+name: Render Candidate 01 Reference
+
+on:
+  push:
+    branches:
+      - archive/candidate-01-reference
+    paths:
+      - 'lib/home_candidate_01_reference.dart'
+      - 'test/candidate01_render_test.dart'
+      - '.github/workflows/render-candidate01-reference.yml'
+      - 'pubspec.yaml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Flutter version
+        run: flutter --version
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Analyze reconstruction
+        run: flutter analyze lib/home_candidate_01_reference.dart test/candidate01_render_test.dart
+      - name: Render Candidate 01 reconstruction
+        run: flutter test --update-goldens test/candidate01_render_test.dart
+      - name: Upload Candidate 01 render
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate01-reconstruction-390x844
+          path: test/goldens/candidate01_reconstruction_390x844.png
+          if-no-files-found: error
+          retention-days: 30
