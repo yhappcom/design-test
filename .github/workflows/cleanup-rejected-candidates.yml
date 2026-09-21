@@ -1,0 +1,39 @@
+name: Cleanup Rejected Candidates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-rejected-candidates.yml'
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  purge:
+    if: contains(github.event.head_commit.message, 'purge rejected candidate actions')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Delete rejected candidate workflow runs and artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          for run_id in \
+            35540497024 \
+            35540487206 \
+            35540405541 \
+            35540314841 \
+            35509409652 \
+            35509397068 \
+            35506601488 \
+            35506588179 \
+            35506471992 \
+            35506295261 \
+            35506146746
+          do
+            echo "Deleting run $run_id"
+            gh api --method DELETE "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" || true
+          done
