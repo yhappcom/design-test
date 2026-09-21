@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../candidate13/home_candidate_13.dart';
 
@@ -35,6 +36,10 @@ Future<void> render(WidgetTester tester, Brightness brightness, String name) asy
 }
 
 void main() {
+  setUpAll(() async {
+    final loader = FontLoader('C13Roboto')..addFont(rootBundle.load('candidate13/fonts/Roboto.ttf'));
+    await loader.load();
+  });
   testWidgets('render candidate13 light', (tester) async {
     await render(tester, Brightness.light, 'candidate13-light-390x844');
   });
