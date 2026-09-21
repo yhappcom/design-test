@@ -74,7 +74,8 @@ TextStyle _op(_C13Colors c, double size,
       color: c.text,
       fontSize: size,
       fontWeight: weight,
-      fontFamily: 'monospace',
+      fontFamily: 'Roboto Mono',
+      fontFamilyFallback: const ['Roboto', 'Arial'],
       fontFeatures: const [FontFeature.tabularFigures()],
       letterSpacing: .1,
     );
@@ -94,15 +95,7 @@ class _Header extends StatelessWidget {
               Text('Good afternoon', style: _ui(c, 22, weight: FontWeight.w650)),
             ]),
           ),
-          Semantics(
-            button: true,
-            label: 'Settings',
-            child: SizedBox(
-              width: 44,
-              height: 44,
-              child: Icon(Icons.tune_rounded, color: c.secondary, size: 21),
-            ),
-          ),
+          IconButton(onPressed: () {}, tooltip: 'Settings', icon: Icon(Icons.tune_rounded, color: c.secondary, size: 21)),
         ],
       );
 }
@@ -135,10 +128,7 @@ class _SignalButton extends StatelessWidget {
   final IconData icon;
   final bool primary;
   @override
-  Widget build(BuildContext context) => Semantics(
-        button: true,
-        label: label,
-        child: Container(
+  Widget build(BuildContext context) => InkWell(\n        onTap: () {},\n        borderRadius: BorderRadius.circular(10),\n        child: Container(
           constraints: const BoxConstraints(minHeight: 48),
           decoration: BoxDecoration(
             color: primary ? c.signal : Colors.transparent,
@@ -158,26 +148,30 @@ class _SignalButton extends StatelessWidget {
       );
 }
 
-class _Search extends StatelessWidget {
+class _Search extends StatefulWidget {
   const _Search({required this.c});
   final _C13Colors c;
-  @override
-  Widget build(BuildContext context) => Semantics(
-        textField: true,
-        label: 'Search flights, airports, crew',
-        child: Container(
-          height: 46,
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: c.rule)),
-          ),
-          child: Row(children: [
-            Icon(Icons.search_rounded, size: 20, color: c.secondary),
-            const SizedBox(width: 10),
-            Text('Search flights, airports, crew',
-                style: _ui(c, 14).copyWith(color: c.secondary)),
-          ]),
-        ),
-      );
+  @override State<_Search> createState() => _SearchState();
+}
+class _SearchState extends State<_Search> {
+  final focus = FocusNode();
+  @override void initState(){ super.initState(); focus.addListener(_changed); }
+  void _changed()=>setState((){});
+  @override void dispose(){ focus.removeListener(_changed); focus.dispose(); super.dispose(); }
+  @override Widget build(BuildContext context) {
+    final c=widget.c; final active=focus.hasFocus;
+    return TextField(
+      focusNode: focus,
+      decoration: InputDecoration(
+        hintText: 'Search flights, airports, crew',
+        prefixIcon: Icon(Icons.search_rounded, size:20, color: active?c.focus:c.secondary),
+        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.rule)),
+        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.focus,width:2)),
+        contentPadding: const EdgeInsets.symmetric(vertical:12),
+      ),
+      style:_ui(c,14),
+    );
+  }
 }
 
 class _SectionLabel extends StatelessWidget {
