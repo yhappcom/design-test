@@ -5,9 +5,9 @@ class Candidate13Home extends StatelessWidget {
   const Candidate13Home({super.key});
 
   static const _recent = [
-    ('09/21', 'KE', '903', 'ICN → LHR', '14+18'),
-    ('09/18', 'KE', '017', 'ICN → LAX', '11+02'),
-    ('09/15', 'KE', '121', 'GMP → CJU', '01+07'),
+    ('09/21', 'KE', '903', 'ICN > LHR', '14+18'),
+    ('09/18', 'KE', '017', 'ICN > LAX', '11+02'),
+    ('09/15', 'KE', '121', 'GMP > CJU', '01+07'),
   ];
 
   @override
@@ -111,7 +111,7 @@ class _Actions extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: _SignalButton(
-              c: c, label: 'View logbook', icon: '≡'),
+              c: c, label: 'View logbook', icon: ''),
         ),
       ]);
 }
@@ -168,7 +168,7 @@ class _SearchState extends State<_Search> {
       decoration: InputDecoration(
         hintText: 'Search flights, airports, crew',
         hintStyle: _ui(c,14).copyWith(color:c.secondary),
-        prefixIcon: Center(widthFactor:1, child: Text('⌕', style:_ui(c,20,weight:FontWeight.w600).copyWith(color:active?c.focus:c.secondary))),
+        prefixIcon: null,
         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.rule)),
         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color:c.focus,width:2)),
         contentPadding: const EdgeInsets.symmetric(vertical:12),
