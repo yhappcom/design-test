@@ -1,0 +1,43 @@
+import 'dart:ui' show FontFeature;
+import 'package:flutter/material.dart';
+
+class Candidate15Home extends StatelessWidget {
+  const Candidate15Home({super.key});
+  static const rows=[('09/21','KE','903','ICN > LHR','14+18'),('09/18','KE','017','ICN > LAX','11+02'),('09/15','KE','121','GMP > CJU','01+07')];
+  @override Widget build(BuildContext context){
+    final p=_P(Theme.of(context).brightness==Brightness.dark);
+    return Scaffold(backgroundColor:p.bg,body:SafeArea(bottom:false,child:Column(children:[
+      Expanded(child:SingleChildScrollView(padding:const EdgeInsets.fromLTRB(18,14,18,20),child:Column(crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+        _Header(p),const SizedBox(height:16),_Actions(p),const SizedBox(height:14),_Search(p),const SizedBox(height:22),
+        _Period(p),const SizedBox(height:23),_Recent(p),const SizedBox(height:23),_Activity(p),const SizedBox(height:23),_Totals(p)
+      ]))),_Nav(p)
+    ])));
+  }
+}
+class _P{_P(this.dark);final bool dark;
+ Color get bg=>dark?const Color(0xFF121313):const Color(0xFFF4F1EA);
+ Color get ink=>dark?const Color(0xFFF2F0EA):const Color(0xFF171716);
+ Color get sub=>dark?const Color(0xFFAAA7A0):const Color(0xFF5B5954);
+ Color get rule=>dark?const Color(0xFF494845):const Color(0xFFB5B0A5);
+ Color get accent=>dark?const Color(0xFFFF6A4A):const Color(0xFFD62D16);
+ Color get onAccent=>Colors.white;
+ Color get focus=>dark?const Color(0xFF62C8FF):const Color(0xFF006B99);
+ Color get select=>dark?const Color(0xFF35201B):const Color(0xFFFFD9D0);
+}
+TextStyle _t(_P p,double s,{FontWeight w=FontWeight.w400})=>TextStyle(fontFamily:'C15Roboto',fontSize:s,fontWeight:w,color:p.ink);
+TextStyle _n(_P p,double s,{FontWeight w=FontWeight.w500})=>TextStyle(fontFamily:'C15Roboto',fontSize:s,fontWeight:w,color:p.ink,fontFeatures:const[FontFeature.tabularFigures()]);
+class _Header extends StatelessWidget{const _Header(this.p);final _P p;@override Widget build(BuildContext c)=>Row(children:[
+ Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('LOGMATE / HOME',style:_t(p,10,w:FontWeight.w800).copyWith(letterSpacing:1.25,color:p.sub)),const SizedBox(height:5),Text('Good afternoon',style:_t(p,23,w:FontWeight.w700))])),
+ TextButton(onPressed:(){},style:TextButton.styleFrom(minimumSize:const Size(44,44),shape:const RoundedRectangleBorder()),child:Text('MENU',style:_t(p,10,w:FontWeight.w800).copyWith(color:p.sub)))
+]);}
+class _Actions extends StatelessWidget{const _Actions(this.p);final _P p;@override Widget build(BuildContext c)=>Row(children:[Expanded(child:_A(p,'ADD FLIGHT',true)),const SizedBox(width:7),Expanded(child:_A(p,'VIEW LOGBOOK',false))]);}
+class _A extends StatelessWidget{const _A(this.p,this.x,this.primary);final _P p;final String x;final bool primary;@override Widget build(BuildContext c)=>OutlinedButton(onPressed:(){},style:OutlinedButton.styleFrom(minimumSize:const Size.fromHeight(46),backgroundColor:primary?p.accent:Colors.transparent,side:BorderSide(color:primary?p.accent:p.ink,width:1.3),shape:const RoundedRectangleBorder(),padding:const EdgeInsets.symmetric(horizontal:7)),child:Text(x,maxLines:1,overflow:TextOverflow.ellipsis,style:_t(p,11,w:FontWeight.w800).copyWith(color:primary?p.onAccent:p.ink,letterSpacing:.4)));}
+class _Search extends StatefulWidget{const _Search(this.p);final _P p;@override State<_Search> createState()=>_SearchS();}
+class _SearchS extends State<_Search>{final f=FocusNode();@override void initState(){super.initState();f.addListener(_x);}_x()=>setState((){});@override void dispose(){f.removeListener(_x);f.dispose();super.dispose();}@override Widget build(BuildContext c){final p=widget.p;return TextField(focusNode:f,style:_t(p,13),decoration:InputDecoration(hintText:'Search flights, airports, crew',hintStyle:_t(p,13).copyWith(color:p.sub),suffixText:'FIND',suffixStyle:_t(p,9,w:FontWeight.w800).copyWith(color:f.hasFocus?p.focus:p.sub),contentPadding:const EdgeInsets.symmetric(vertical:10),enabledBorder:UnderlineInputBorder(borderSide:BorderSide(color:p.ink,width:1.2)),focusedBorder:UnderlineInputBorder(borderSide:BorderSide(color:p.focus,width:2))));}}
+class _L extends StatelessWidget{const _L(this.p,this.x,{this.trailing});final _P p;final String x;final Widget? trailing;@override Widget build(BuildContext c)=>Row(children:[Container(width:5,height:5,color:p.accent),const SizedBox(width:7),Text(x.toUpperCase(),style:_t(p,10,w:FontWeight.w800).copyWith(letterSpacing:1)),const SizedBox(width:8),Expanded(child:Container(height:1,color:p.rule)),if(trailing!=null)...[const SizedBox(width:8),trailing!]]);}
+class _Period extends StatelessWidget{const _Period(this.p);final _P p;@override Widget build(BuildContext c)=>Column(crossAxisAlignment:CrossAxisAlignment.start,children:[_L(p,'Current period',trailing:Text('28 DAYS',style:_t(p,9,w:FontWeight.w800).copyWith(color:p.sub))),const SizedBox(height:12),Row(crossAxisAlignment:CrossAxisAlignment.end,children:[Text('62+41',style:_n(p,32,w:FontWeight.w800)),const SizedBox(width:7),Padding(padding:const EdgeInsets.only(bottom:4),child:Text('BLOCK',style:_t(p,9,w:FontWeight.w800).copyWith(color:p.sub))),const Spacer(),Padding(padding:const EdgeInsets.only(bottom:4),child:Text('18 FLIGHTS',style:_t(p,10,w:FontWeight.w700).copyWith(color:p.sub)))]),const SizedBox(height:8),Row(children:[Expanded(flex:68,child:Container(height:3,color:p.accent)),Expanded(flex:32,child:Container(height:3,color:p.rule))])]);}
+class _Recent extends StatelessWidget{const _Recent(this.p);final _P p;TextStyle cap()=>_t(p,8,w:FontWeight.w800).copyWith(color:p.sub,letterSpacing:.6);@override Widget build(BuildContext c)=>Column(children:[_L(p,'Recent flights',trailing:Text('SEE ALL',style:_t(p,9,w:FontWeight.w800).copyWith(color:p.accent))),const SizedBox(height:10),Row(children:[SizedBox(width:45,child:Text('DATE',style:cap())),SizedBox(width:69,child:Text('FLIGHT',style:cap())),Expanded(child:Text('ROUTE',style:cap())),SizedBox(width:47,child:Text('BLOCK',textAlign:TextAlign.end,style:cap()))]),const SizedBox(height:2),for(final r in Candidate15Home.rows)_R(p,r)]);}
+class _R extends StatelessWidget{const _R(this.p,this.r);final _P p;final(String,String,String,String,String)r;@override Widget build(BuildContext c)=>Container(height:38,decoration:BoxDecoration(border:Border(bottom:BorderSide(color:p.rule))),child:Row(children:[SizedBox(width:45,child:Text(r.$1,style:_n(p,10))),SizedBox(width:69,child:Row(children:[SizedBox(width:22,child:Text(r.$2,style:_n(p,10,w:FontWeight.w800))),Text(r.$3,style:_n(p,10))])),Expanded(child:Text(r.$4,style:_n(p,10))),SizedBox(width:47,child:Text(r.$5,textAlign:TextAlign.end,style:_n(p,10,w:FontWeight.w800)))]));}
+class _Activity extends StatelessWidget{const _Activity(this.p);final _P p;@override Widget build(BuildContext c)=>Column(children:[_L(p,'Activity'),const SizedBox(height:10),Row(children:[for(final x in['7 DAYS','28 DAYS','90 DAYS','CUSTOM'])Expanded(child:Container(height:36,alignment:Alignment.center,decoration:BoxDecoration(color:x=='28 DAYS'?p.select:Colors.transparent,border:Border(top:BorderSide(color:x=='28 DAYS'?p.accent:p.rule,width:x=='28 DAYS'?2:1),bottom:BorderSide(color:p.rule))),child:Text(x,style:_t(p,9,w:x=='28 DAYS'?FontWeight.w800:FontWeight.w600).copyWith(color:x=='28 DAYS'?p.ink:p.sub))))])]);}
+class _Totals extends StatelessWidget{const _Totals(this.p);final _P p;@override Widget build(BuildContext c)=>Column(children:[_L(p,'Totals'),const SizedBox(height:11),Row(children:[m('BLOCK','4,862+37'),m('NIGHT','1,104+22'),m('INST','682+14')])]);Widget m(String l,String v)=>Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text(l,style:_t(p,8,w:FontWeight.w800).copyWith(color:p.sub,letterSpacing:.7)),const SizedBox(height:3),Text(v,style:_n(p,14,w:FontWeight.w800))]));}
+class _Nav extends StatelessWidget{const _Nav(this.p);final _P p;@override Widget build(BuildContext c)=>Container(decoration:BoxDecoration(color:p.bg,border:Border(top:BorderSide(color:p.ink,width:1.2))),padding:const EdgeInsets.fromLTRB(10,3,10,7),child:SafeArea(top:false,child:Row(children:[i('HOME',true),i('LOGBOOK',false),i('ACTIVITY',false),i('MORE',false)])));Widget i(String x,bool s)=>Expanded(child:TextButton(onPressed:(){},style:TextButton.styleFrom(minimumSize:const Size(44,48),shape:const RoundedRectangleBorder()),child:Column(mainAxisSize:MainAxisSize.min,children:[Container(width:s?22:5,height:2,color:s?p.accent:p.rule),const SizedBox(height:5),Text(x,style:_t(p,9,w:s?FontWeight.w800:FontWeight.w600).copyWith(color:s?p.ink:p.sub))])));}
