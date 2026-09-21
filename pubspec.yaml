@@ -15,3 +15,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: C16Roboto
+      fonts:
+        - asset: candidate16/fonts/Roboto.ttf
