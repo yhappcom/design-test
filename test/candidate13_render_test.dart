@@ -16,7 +16,8 @@ Future<void> render(WidgetTester tester, Brightness brightness, String name) asy
     theme: ThemeData(useMaterial3: true, brightness: brightness),
     home: RepaintBoundary(key: key, child: const Candidate13Home()),
   ));
-  await tester.pumpAndSettle();
+  await tester.pump();
+  await tester.pump(const Duration(milliseconds: 100));
   final boundary = key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
   final image = await boundary.toImage(pixelRatio: 1);
   final data = await image.toByteData(format: ui.ImageByteFormat.png);
