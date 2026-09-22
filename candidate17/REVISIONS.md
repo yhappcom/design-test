@@ -26,3 +26,15 @@ Because exact source changed, R2 is superseded for the render gate and all disci
 Workflow run 35676170577 compiled but failed during layout because the frozen baseline's action item placed a `Flexible` text child inside a Row receiving unbounded horizontal constraints from the parent action Row. This is an inherited runtime defect, not Candidate 17's visual concept.
 
 Repair: remove only the unnecessary inner `Flexible` wrapper around the short fixed action label. The parent action Row, action positions, hit geometry, labels, spacing and vertical geometry remain unchanged. R3 is superseded and all discipline passes are rerun as R4.
+
+
+## R4 visual-inspection defect
+Workflow run 35676351817 produced valid Light/Dark PNGs, but manual open inspection found two deterministic-render defects:
+1. Material settings/search icon glyphs rendered as square tofu blocks.
+2. Recent Flights header labels rendered as Ahem-like blocks because the DefaultTextStyle path did not resolve the intended candidate font.
+
+Repair:
+- replace settings/search font icons with font-independent CustomPainter vector glyphs at the same visual bounds and positions;
+- bind C17Sans explicitly to the flight-header DefaultTextStyle.
+
+No section, spacing, action location, grid geometry, data fixture or semantic destination changed. Because exact visual source changed, R4 is superseded and all discipline passes are rerun as R5.
