@@ -323,9 +323,7 @@ class _V11Header extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 2),
-                      child: Icon(
-                        Icons.settings_outlined,
-                        size: 18,
+                      child: _SettingsGlyph(
                         color: context.v11Secondary,
                       ),
                     ),
@@ -394,9 +392,7 @@ class _V11SearchState extends State<_V11Search> {
                 decoration: InputDecoration(
                   isDense: true,
                   border: InputBorder.none,
-                  prefixIcon: Icon(
-                    Icons.search_rounded,
-                    size: 16,
+                  prefixIcon: _SearchGlyph(
                     color:
                         active ? context.v11Signal : context.v11Secondary,
                   ),
@@ -840,7 +836,7 @@ class _V11FlightGrid extends StatelessWidget {
     Widget styleHeader(Widget child) => SizedBox(
           width: double.infinity,
           child: DefaultTextStyle(
-            style: context.v11DataLabel,
+            style: context.v11DataLabel.copyWith(fontFamily: 'C17Sans'),
             maxLines: 1,
             overflow: TextOverflow.clip,
             child: child,
@@ -1129,4 +1125,74 @@ class _V11Totals extends StatelessWidget {
           ),
         ],
       );
+}
+
+
+class _SearchGlyph extends StatelessWidget {
+  const _SearchGlyph({required this.color});
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        width: 16,
+        height: 16,
+        child: CustomPaint(painter: _SearchGlyphPainter(color)),
+      );
+}
+
+class _SearchGlyphPainter extends CustomPainter {
+  const _SearchGlyphPainter(this.color);
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final p = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.7
+      ..strokeCap = StrokeCap.round;
+    canvas.drawCircle(const Offset(6.2, 6.2), 3.9, p);
+    canvas.drawLine(const Offset(9.1, 9.1), const Offset(13.5, 13.5), p);
+  }
+
+  @override
+  bool shouldRepaint(covariant _SearchGlyphPainter oldDelegate) =>
+      oldDelegate.color != color;
+}
+
+class _SettingsGlyph extends StatelessWidget {
+  const _SettingsGlyph({required this.color});
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        width: 18,
+        height: 18,
+        child: CustomPaint(painter: _SettingsGlyphPainter(color)),
+      );
+}
+
+class _SettingsGlyphPainter extends CustomPainter {
+  const _SettingsGlyphPainter(this.color);
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final p = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5
+      ..strokeCap = StrokeCap.round;
+    canvas.drawLine(const Offset(2, 4), const Offset(16, 4), p);
+    canvas.drawLine(const Offset(2, 9), const Offset(16, 9), p);
+    canvas.drawLine(const Offset(2, 14), const Offset(16, 14), p);
+    final knob = Paint()..color = color;
+    canvas.drawCircle(const Offset(11.5, 4), 1.8, knob);
+    canvas.drawCircle(const Offset(6.5, 9), 1.8, knob);
+    canvas.drawCircle(const Offset(12.5, 14), 1.8, knob);
+  }
+
+  @override
+  bool shouldRepaint(covariant _SettingsGlyphPainter oldDelegate) =>
+      oldDelegate.color != color;
 }
