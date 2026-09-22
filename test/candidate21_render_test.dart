@@ -1,0 +1,4 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import '../lib/home_candidate_21_final.dart';
+void main(){Future<void> shot(WidgetTester t,Brightness b,String name)async{await t.binding.setSurfaceSize(const Size(390,844));await t.pumpWidget(MaterialApp(debugShowCheckedModeBanner:false,theme:ThemeData(brightness:Brightness.light,useMaterial3:true),darkTheme:ThemeData(brightness:Brightness.dark,useMaterial3:true),themeMode:b==Brightness.dark?ThemeMode.dark:ThemeMode.light,home:RepaintBoundary(key:const Key('shot'),child:const SizedBox(width:390,height:844,child:HomeCandidate21Final()))));await t.pumpAndSettle();await expectLater(find.byKey(const Key('shot')),matchesGoldenFile('goldens/candidate21_${name}_390x844.png'));}testWidgets('light 390x844',(t)async=>shot(t,Brightness.light,'light'));testWidgets('dark 390x844',(t)async=>shot(t,Brightness.dark,'dark'));}
