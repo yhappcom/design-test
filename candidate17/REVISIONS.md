@@ -12,3 +12,11 @@ Candidate 17 was rebuilt directly from frozen baseline commit `79fd5c43ca6b09ea5
 The renderer import was corrected to the branch source. Inter and Roboto Mono were bundled and registered for deterministic UI/operational rendering.
 
 External-app research is principle-only (Flighty salience, Linear compact workflow/state clarity, Things reduced chrome); no external layout, screenshot, asset, icon system, branded motif or palette is copied.
+
+
+## R2 compile blocker
+Workflow run 35675974168 reached the relevant Flutter test but compilation stopped on a defect inherited from the frozen baseline: `SizedBox(minHeight: 30)` is not a valid Flutter constructor argument. This again produced no render artifact and is classified as NON-EXECUTION rather than visual evidence.
+
+Repair: replace that single baseline expression with `ConstrainedBox(constraints: BoxConstraints(minHeight: 30))`. The intended minimum-height geometry remains 30 px; section placement, spacing, sizing and content are unchanged.
+
+Because exact source changed, R2 is superseded for the render gate and all discipline passes are rerun as R3.
