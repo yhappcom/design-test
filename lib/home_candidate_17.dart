@@ -585,8 +585,8 @@ class _V11SectionHeader extends StatelessWidget {
       );
     }
 
-    return SizedBox(
-      minHeight: 30,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 30),
       child: Row(
         children: [
           Expanded(child: Text(title, style: context.v11Section)),
