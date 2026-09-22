@@ -1,0 +1,27 @@
+name: Render Candidate 21
+on:
+  push:
+    branches: ['candidate/21-quiet-axis']
+    paths:
+      - 'lib/home_candidate_21_final.dart'
+      - 'test/candidate21_render_test.dart'
+      - '.github/workflows/render-candidate21.yml'
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Render 390x844 Light Dark
+        run: flutter test --update-goldens test/candidate21_render_test.dart
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate21-390x844
+          path: test/goldens/candidate21_*_390x844.png
+          if-no-files-found: error
+          retention-days: 14
