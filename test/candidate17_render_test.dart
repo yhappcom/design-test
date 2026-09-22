@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:logmate_design_test/home_candidate_17.dart';
+import '../lib/home_candidate_17.dart';
 
 Future<void> render(WidgetTester tester, Brightness brightness, String name) async {
   tester.view.physicalSize = const Size(390, 844);
