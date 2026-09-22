@@ -15,3 +15,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: C17Sans
+      fonts:
+        - asset: candidate17/fonts/Inter.ttf
+    - family: C17Mono
+      fonts:
+        - asset: candidate17/fonts/RobotoMono.ttf
