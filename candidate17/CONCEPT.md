@@ -1,17 +1,36 @@
 # Candidate 17 — Split Signal
 
 Status: IN PROGRESS
-Baseline: `checkpoint/home-structural-baseline-20260919@79fd5c43ca6b09ea5b773c77319709139f1b8089`
-Review authority: `yhappcom/design-studio@main` (`74dcb12d278c110dd682ac0ff8c4988aceaba28b` at cycle start)
+Baseline: checkpoint/home-structural-baseline-20260919 @ 79fd5c43ca6b09ea5b773c77319709139f1b8089
+Design Studio authority: main@74dcb12d278c110dd682ac0ff8c4988aceaba28b
 
 ## Isolation
-Candidate 01, 02–11, 12, and 13–16 are not generation inputs, transformation sources, stylistic seeds, or derivation sources. The implementation starts only from the structural baseline. External-product references are principle-level inspiration only; no screen, asset, layout, or brand expression is copied.
+Candidates 01–16 are excluded as generation inputs, transformation sources, stylistic seeds, derivation sources, or layout sources. Candidate 01 is owner-comparison only; Candidate 12 and owner-saved Candidate 14 remain preserved. Candidate 15/16 are evidence/comparison records only.
 
-## Layout freeze
-Candidate 17 deliberately preserves the baseline Home composition from `HomeV011`: 24px horizontal page inset; header; Add Flight / View Logbook action row; Search; centered month navigator; two Current Period metrics; Recent Flights with the exact Date/Flight/Route/Block 23/25/30/22 grid; Activity header, 7/28/90/Custom selector and three metrics; Totals header and three metrics. Existing fixture strings, action placement, operational zones, and vertical spacers are unchanged.
+## Owner constraints
+- Preserve the original Home layout, not merely section order.
+- Preserve structural baseline geometry, data fixtures, semantics, action/destination placement and operational axes.
+- Avoid pastel atmosphere.
+- Increase visual novelty relative to Candidates 14–16 without changing layout.
+- External-app research may inform design principles, never copied layout, assets, icons, branded motifs or palette.
+
+## External reference principles
+Reference research was limited to principle extraction:
+- Flighty: strong status/data salience and decisive signal hierarchy in a flight context.
+- Linear Mobile: compact workflow clarity, depth/contrast used to separate action/state.
+- Things: reduced chrome and controls that stay out of the content flow.
+
+No reference app is a visual parent. No screenshot, layout, color palette, icon system or component geometry is reproduced.
 
 ## Visual concept
-`Split Signal` creates novelty without moving layout. The page uses a high-contrast ink/cobalt system with a narrow electric-lime signal reserved for selected/active state. Section identity comes from asymmetric split rules (heavy short lead + hairline continuation), not card stacking. Search and selected-period surfaces use clipped/squared geometry; primary operational numerics use tabular figures; airport codes retain the baseline monospaced treatment. Light is cool paper-white with deep navy ink; Dark is blue-black with near-white ink. No pastel atmosphere, glass, metallic/cockpit simulation, or ledger/editorial rule field.
+Split Signal keeps the frozen Home composition intact and changes only its visual system:
+- high-contrast cool-white / blue-black surfaces;
+- saturated cobalt as functional primary;
+- acid-lime micro-signal reserved for high-attention control cues;
+- deterministic proportional UI type plus deterministic mono for operational codes;
+- hard 3–4 px corner language instead of soft card rounding;
+- explicit search boundary and strong filled selected-period state;
+- accent emphasis on current-period values, text actions and block values;
+- no cards added, no section relocated, no geometry rewritten.
 
-## Anti-similarity target
-Avoid the neutral + vermilion ledger grammar and thin-rule editorial feel seen in the immediately preceding completed family. Distinction must come from signal architecture, split-rule hierarchy, cobalt field accents, and squared state surfaces while preserving baseline geometry.
+The concept is intentionally more assertive than Candidates 14–16 while remaining a durable professional tool rather than an aviation-themed interface.
