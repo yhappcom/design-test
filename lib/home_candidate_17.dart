@@ -530,13 +530,11 @@ class _V11ActionItem extends StatelessWidget {
                   ),
                   const SizedBox(width: 6),
                 ],
-                Flexible(
-                  child: Text(
-                    label,
-                    textAlign: TextAlign.center,
-                    style: context.v11Action.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
+                Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: context.v11Action.copyWith(
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 if (trailing != null) ...[
