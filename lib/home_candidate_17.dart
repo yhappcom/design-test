@@ -160,7 +160,7 @@ class _HomeCandidate17State extends State<HomeCandidate17> {
   @override
   Widget build(BuildContext context) {
     final brightness = Theme.of(context).brightness;
-    final fontFamily = Theme.of(context).textTheme.bodyLarge?.fontFamily;
+    const fontFamily = 'C17Sans';
 
     return Theme(
       data: _V11Theme.build(brightness, fontFamily: fontFamily),
