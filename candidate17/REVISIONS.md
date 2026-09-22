@@ -20,3 +20,9 @@ Workflow run 35675974168 reached the relevant Flutter test but compilation stopp
 Repair: replace that single baseline expression with `ConstrainedBox(constraints: BoxConstraints(minHeight: 30))`. The intended minimum-height geometry remains 30 px; section placement, spacing, sizing and content are unchanged.
 
 Because exact source changed, R2 is superseded for the render gate and all discipline passes are rerun as R3.
+
+
+## R3 runtime-layout blocker
+Workflow run 35676170577 compiled but failed during layout because the frozen baseline's action item placed a `Flexible` text child inside a Row receiving unbounded horizontal constraints from the parent action Row. This is an inherited runtime defect, not Candidate 17's visual concept.
+
+Repair: remove only the unnecessary inner `Flexible` wrapper around the short fixed action label. The parent action Row, action positions, hit geometry, labels, spacing and vertical geometry remain unchanged. R3 is superseded and all discipline passes are rerun as R4.
