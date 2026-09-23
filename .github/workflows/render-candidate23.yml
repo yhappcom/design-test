@@ -21,6 +21,18 @@ jobs:
           cache: true
       - run: flutter --version
       - run: flutter pub get
+      - name: Repair frozen baseline compile compatibility for renderer
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('lib/home_v0_11.dart')
+          s = p.read_text()
+          old = """    return SizedBox(\n      minHeight: 30,\n      child: Row("""
+          new = """    return ConstrainedBox(\n      constraints: const BoxConstraints(minHeight: 30),\n      child: Row("""
+          if old not in s:
+              raise SystemExit('expected frozen-baseline compatibility target not found')
+          p.write_text(s.replace(old, new, 1))
+          PY
       - name: Render Candidate 23 goldens
         run: flutter test --update-goldens test/candidate23_render_test.dart
       - name: Upload Candidate 23 renders
