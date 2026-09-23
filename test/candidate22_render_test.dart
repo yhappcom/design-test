@@ -5,16 +5,31 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../lib/home_candidate_22_flight_manifest.dart';
 
-Future<void> loadRenderFont() async {
-  final bytes = await File('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf').readAsBytes();
-  final data = ByteData.view(bytes.buffer, bytes.offsetInBytes, bytes.lengthInBytes);
-  final loader = FontLoader('CandidateRenderFont')
-    ..addFont(Future<ByteData>.value(data));
-  await loader.load();
+Future<ByteData> fontData(String path) async {
+  final bytes = await File(path).readAsBytes();
+  return ByteData.view(bytes.buffer, bytes.offsetInBytes, bytes.lengthInBytes);
+}
+
+Future<void> loadRenderFonts() async {
+  final flutterRoot = Platform.environment['FLUTTER_ROOT'];
+  if (flutterRoot == null) {
+    throw StateError('FLUTTER_ROOT is required for deterministic icon rendering');
+  }
+
+  final sans = FontLoader('CandidateRenderFont')
+    ..addFont(fontData('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'));
+  final mono = FontLoader('monospace')
+    ..addFont(fontData('/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf'));
+  final icons = FontLoader('MaterialIcons')
+    ..addFont(fontData(
+      '$flutterRoot/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf',
+    ));
+
+  await Future.wait([sans.load(), mono.load(), icons.load()]);
 }
 
 void main() {
-  setUpAll(loadRenderFont);
+  setUpAll(loadRenderFonts);
 
   Future<void> shot(
     WidgetTester tester,
