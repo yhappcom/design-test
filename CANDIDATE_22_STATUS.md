@@ -4,7 +4,7 @@ Status: AWAITING OWNER DECISION
 
 Baseline: `79fd5c43ca6b09ea5b773c77319709139f1b8089`
 Candidate branch: `candidate/22-flight-manifest`
-Final branch HEAD: `418ea565b79fc7c85950cf7d2dc470a8428dc5ad`
+Final render HEAD: `418ea565b79fc7c85950cf7d2dc470a8428dc5ad`
 Visual-source commit: `8f60e0c51f88704de8c0d78488bf43b8c7336a64`
 Final renderer commit: `418ea565b79fc7c85950cf7d2dc470a8428dc5ad`
 
