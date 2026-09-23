@@ -18,10 +18,10 @@ jobs:
           cache: true
       - run: flutter pub get
       - name: Render 390x844 Light Dark
-        run: flutter test test/candidate22_render_test.dart
+        run: flutter test --update-goldens test/candidate22_render_test.dart
       - uses: actions/upload-artifact@v4
         with:
           name: candidate22-390x844
-          path: candidate22_*_390x844.png
+          path: test/goldens/candidate22_*_390x844.png
           if-no-files-found: error
           retention-days: 14
