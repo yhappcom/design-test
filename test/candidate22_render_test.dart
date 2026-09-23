@@ -44,7 +44,8 @@ Future<void> render(
       ),
     ),
   );
-  await tester.pumpAndSettle();
+  await tester.pump();
+  await tester.pump(const Duration(milliseconds: 100));
 
   final boundary = tester.renderObject<RenderRepaintBoundary>(
     find.byKey(const Key('shot')),
