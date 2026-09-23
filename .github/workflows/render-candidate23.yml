@@ -1,0 +1,32 @@
+name: Render Candidate 23
+
+on:
+  push:
+    branches: ['candidate/23-cockpit-paper']
+    paths:
+      - 'lib/home_candidate_23_visual.dart'
+      - 'test/candidate23_render_test.dart'
+      - '.github/workflows/render-candidate23.yml'
+      - 'pubspec.yaml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter --version
+      - run: flutter pub get
+      - name: Render Candidate 23 goldens
+        run: flutter test --update-goldens test/candidate23_render_test.dart
+      - name: Upload Candidate 23 renders
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate23-390x844
+          path: test/goldens/candidate23_*_390x844.png
+          if-no-files-found: error
+          retention-days: 14
